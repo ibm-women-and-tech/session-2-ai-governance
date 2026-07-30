@@ -12,41 +12,47 @@ const base = import.meta.env.BASE_URL;
 
 const steps = [
   {
-    label: "Step 1 — Use Case Owner",
+    number: "01",
+    label: "Use Case Owner",
     items: [
       { label: "Use Case Creation", href: `${base}/steps/step1/usecase-creation-model-owner` },
       { label: "Risk Review (RCO)", href: `${base}/steps/step1/risk-review-rco` },
     ],
   },
   {
-    label: "Step 2 — Risk & Compliance Officer",
+    number: "02",
+    label: "Risk & Compliance Officer",
     items: [
       { label: "Risk Endorsement", href: `${base}/steps/step2/risk-endorsement-bul` },
     ],
   },
   {
-    label: "Step 3 — Model Developer",
+    number: "03",
+    label: "Model Developer",
     items: [
       { label: "Developer Tasks", href: `${base}/steps/step3/model-developer-tasks` },
       { label: "Model Development", href: `${base}/steps/step3/model-developement` },
     ],
   },
   {
-    label: "Step 4 — Model Validator",
+    number: "04",
+    label: "Model Validator",
     items: [
       { label: "Validator Tasks", href: `${base}/steps/step4/model-validator-tasks` },
       { label: "Model Validation", href: `${base}/steps/step4/model-validation` },
     ],
   },
   {
-    label: "Step 5 — AIOps Engineer",
+    number: "05",
+    label: "AIOps Engineer",
     items: [
       { label: "Deployer Tasks", href: `${base}/steps/step5/model-deployer-tasks` },
       { label: "Model Deployment", href: `${base}/steps/step5/model-deployment` },
     ],
   },
   {
-    label: "Step 6 — Risk & Compliance Officer",
+    number: "06",
+    label: "Risk & Compliance Officer",
     items: [
       { label: "Mitigating Incidents", href: `${base}/steps/step6/mitigating-incidents` },
       { label: "Model Management Evals", href: `${base}/steps/step6/model-management-evals` },
@@ -54,6 +60,9 @@ const steps = [
     ],
   },
 ];
+
+// Derive which step number is active for the progress bar
+const activeStepIndex = steps.findIndex(g => g.items.some(i => i.href === currentPath));
 ---
 
 <!DOCTYPE html>
@@ -68,33 +77,52 @@ const steps = [
   <body class="bg-white text-gray-900 min-h-screen flex flex-col">
 
     <!-- Top nav -->
-    <header class="bg-gray-900 text-white border-b border-gray-700">
-      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center">
-        <a href="https://ibm-women-and-tech.github.io" class="text-sm text-blue-400 hover:underline">← IBM Women and Tech</a>
-        <span class="text-gray-500 mx-2">/</span>
-        <a href={base} class="text-sm text-gray-300 hover:text-white">Session 2 — AI Risk &amp; Compliance</a>
+    <header class="border-b border-gray-100">
+      <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+        <div class="flex items-center gap-2 text-sm">
+          <a href="https://ibm-women-and-tech.github.io" class="text-violet-600 hover:underline font-medium">IBM Women and Tech</a>
+          <span class="text-gray-300">/</span>
+          <a href={base} class="text-gray-500 hover:text-violet-600 transition-colors">Session 2</a>
+        </div>
+        <p class="hidden sm:block text-xs tracking-widest uppercase text-gray-400">AI Risk &amp; Compliance</p>
+      </div>
+      <!-- Step progress bar -->
+      <div class="flex h-0.5 bg-gray-100">
+        {steps.map((_, i) => (
+          <div class={`flex-1 transition-colors ${i <= activeStepIndex ? 'bg-violet-500' : 'bg-gray-100'}`}></div>
+        ))}
       </div>
     </header>
 
     <div class="flex flex-1 max-w-7xl mx-auto w-full">
 
       <!-- Sidebar -->
-      <nav class="hidden md:block w-64 shrink-0 border-r border-gray-200 py-8 px-4 overflow-y-auto">
-        <a href={base} class="block text-sm font-semibold text-gray-900 mb-6 hover:text-blue-600">🏠 Lab Overview</a>
+      <nav class="hidden md:flex flex-col w-64 shrink-0 border-r border-gray-100 py-8 px-4 overflow-y-auto gap-1">
+        <a href={base}
+          class="flex items-center gap-2 text-sm font-semibold text-gray-900 hover:text-violet-600 mb-5 px-2 transition-colors">
+          ← Lab Overview
+        </a>
+
         {steps.map((group) => (
-          <div class="mb-5">
-            <p class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2 px-2">{group.label}</p>
-            <ul class="space-y-0.5">
+          <div class="mb-4">
+            <!-- Step badge + label -->
+            <div class="flex items-center gap-2 px-2 mb-1.5">
+              <span class="flex items-center justify-center w-6 h-6 rounded-lg bg-violet-50 border border-violet-200 text-violet-600 text-xs font-bold shrink-0">
+                {group.number}
+              </span>
+              <p class="text-xs font-bold uppercase tracking-wider text-gray-400 leading-none">{group.label}</p>
+            </div>
+            <ul class="space-y-0.5 pl-2">
               {group.items.map((item) => {
                 const isActive = currentPath === item.href;
                 return (
                   <li>
                     <a
                       href={item.href}
-                      class={`block rounded px-2 py-1.5 text-sm transition-colors ${
+                      class={`block rounded-lg px-3 py-1.5 text-sm transition-colors ${
                         isActive
-                          ? 'bg-blue-50 text-blue-700 font-medium'
-                          : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
+                          ? 'bg-violet-50 text-violet-700 font-semibold border border-violet-200'
+                          : 'text-gray-500 hover:bg-gray-50 hover:text-gray-900'
                       }`}
                     >
                       {item.label}
@@ -108,16 +136,17 @@ const steps = [
       </nav>
 
       <!-- Content -->
-      <main class="flex-1 min-w-0 py-10 px-8">
+      <main class="flex-1 min-w-0 py-10 px-8 lg:px-12">
         <slot />
       </main>
 
     </div>
 
     <!-- Footer -->
-    <footer class="border-t border-gray-200">
-      <div class="max-w-7xl mx-auto px-6 py-5 text-center text-xs text-gray-400">
-        IBM Women and Tech &mdash; Session 2 &mdash; built with <a href="https://astro.build" class="hover:underline">Astro</a>
+    <footer class="border-t border-gray-100">
+      <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between text-xs text-gray-400">
+        <span>Women &amp; Tech Event Series &nbsp;·&nbsp; IBM Innovation Studio</span>
+        <span>built with <a href="https://astro.build" class="hover:underline">Astro</a></span>
       </div>
     </footer>
 

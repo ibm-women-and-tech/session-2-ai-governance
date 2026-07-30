@@ -13,45 +13,61 @@ const steps = [
 ];
 ---
 
-<BaseLayout title="Session 2 — AI Risk & Compliance">
+<BaseLayout title="Session 2">
+
   <!-- Hero -->
-  <div class="bg-gray-900 text-white">
-    <div class="max-w-5xl mx-auto px-6 py-14">
-      <p class="text-sm font-semibold tracking-widest uppercase text-blue-400 mb-2">Session 2</p>
-      <h1 class="text-4xl font-bold mb-4">Managing AI Risk and Compliance<br />with watsonx.governance</h1>
-      <p class="text-gray-300 text-lg max-w-2xl leading-relaxed">
-        A story-driven, hands-on lab covering the full AI governance lifecycle — from use case creation to production incident management.
+  <div class="relative overflow-hidden border-b border-gray-100">
+    <div class="pointer-events-none absolute -top-20 -right-20 w-80 h-80 rounded-full"
+         style="background: radial-gradient(circle, rgba(167,139,250,0.3) 0%, rgba(196,181,253,0.08) 60%, transparent 80%);"></div>
+    <div class="pointer-events-none absolute bottom-0 left-0 w-64 h-64 rounded-full"
+         style="background: radial-gradient(circle, rgba(147,197,253,0.2) 0%, transparent 70%);"></div>
+    <div class="relative max-w-7xl mx-auto px-8 py-16">
+      <p class="text-xs font-semibold tracking-widest uppercase text-violet-500 mb-3">Session 2 &nbsp;·&nbsp; Hands-on Lab</p>
+      <h1 class="text-5xl font-bold leading-tight tracking-tight text-gray-900 max-w-3xl">
+        Managing AI Risk and<br />
+        <span class="text-violet-600">Compliance</span> with watsonx.governance
+      </h1>
+      <p class="mt-5 text-lg text-gray-500 max-w-2xl leading-relaxed">
+        A story-driven lab covering the full AI governance lifecycle — from use case creation to production incident management.
       </p>
       <a href={`${base}/steps/step1/usecase-creation-model-owner`}
-        class="inline-block mt-8 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-6 py-3 rounded transition-colors">
+        class="inline-block mt-8 bg-violet-600 hover:bg-violet-700 text-white text-sm font-semibold px-7 py-3 rounded-xl transition-colors">
         Start the lab →
       </a>
     </div>
   </div>
 
   <!-- Steps grid -->
-  <div class="max-w-5xl mx-auto px-6 py-14">
-    <h2 class="text-xl font-bold text-gray-900 mb-8">The 6-Step AI Governance Journey</h2>
+  <div class="max-w-7xl mx-auto px-8 py-16">
+    <p class="text-xs font-semibold tracking-widest uppercase text-violet-500 mb-2">The Journey</p>
+    <h2 class="text-2xl font-bold text-gray-900 mb-10">6-step AI Governance workflow</h2>
+
     <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
       {steps.map((step) => (
         <a href={step.href}
-          class="group block border border-gray-200 rounded-lg p-6 hover:shadow-md hover:border-blue-400 transition-all">
-          <span class="text-3xl font-bold text-gray-100 group-hover:text-blue-100">{step.number}</span>
-          <h3 class="mt-2 text-base font-semibold text-gray-900 group-hover:text-blue-700">{step.label}</h3>
-          <p class="mt-1 text-sm text-gray-500 leading-relaxed">{step.description}</p>
-          <div class="mt-4 text-sm font-medium text-blue-600 group-hover:underline">View guide →</div>
+          class="group block border border-gray-200 rounded-2xl p-6 hover:border-violet-300 hover:shadow-md transition-all">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="flex items-center justify-center w-9 h-9 rounded-xl bg-violet-50 border border-violet-200 text-violet-600 text-sm font-bold shrink-0">
+              {step.number}
+            </span>
+          </div>
+          <h3 class="text-base font-semibold text-gray-900 group-hover:text-violet-700 mb-1">{step.label}</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">{step.description}</p>
+          <div class="mt-4 text-sm font-semibold text-violet-600 group-hover:underline">View guide →</div>
         </a>
       ))}
     </div>
 
     <!-- Prerequisites -->
-    <div class="mt-14 bg-blue-50 border border-blue-200 rounded-lg p-6">
-      <h2 class="text-base font-semibold text-blue-900 mb-3">Prerequisites</h2>
-      <ul class="text-sm text-blue-800 space-y-1 list-disc list-inside">
-        <li>Access credentials provided by the instructor</li>
-        <li>IBM Cloud login with assigned stakeholder role</li>
-        <li>Services: OpenPages with MRG (Main Labs), Model Management (Additional Labs)</li>
+    <div class="mt-14 border border-violet-200 bg-violet-50 rounded-2xl p-7">
+      <p class="text-xs font-semibold tracking-widest uppercase text-violet-500 mb-2">Before you start</p>
+      <h2 class="text-base font-semibold text-gray-900 mb-4">Prerequisites</h2>
+      <ul class="text-sm text-gray-600 space-y-2">
+        <li class="flex gap-2"><span class="text-violet-400 font-bold">·</span> Access credentials provided by the instructor</li>
+        <li class="flex gap-2"><span class="text-violet-400 font-bold">·</span> IBM Cloud login with assigned stakeholder role</li>
+        <li class="flex gap-2"><span class="text-violet-400 font-bold">·</span> Services: OpenPages with MRG (Main Labs), Model Management (Additional Labs)</li>
       </ul>
     </div>
   </div>
+
 </BaseLayout>

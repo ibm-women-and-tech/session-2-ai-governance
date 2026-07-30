@@ -19,25 +19,27 @@ const base = import.meta.env.BASE_URL;
     <title>{title} — AI Risk & Compliance</title>
     <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
   </head>
-  <body class="bg-white text-gray-900 min-h-screen flex flex-col">
+  <body class="bg-white text-gray-900 min-h-screen flex flex-col overflow-x-hidden">
 
     <!-- Top nav -->
-    <header class="bg-gray-900 text-white border-b border-gray-700">
-      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <div>
-          <a href={base} class="text-sm text-blue-400 hover:underline">← IBM Women and Tech</a>
-          <span class="text-gray-500 mx-2">/</span>
-          <span class="text-sm text-gray-300">Session 2 — AI Risk &amp; Compliance</span>
+    <header class="border-b border-gray-100">
+      <div class="max-w-7xl mx-auto px-8 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-2 text-sm">
+          <a href="https://ibm-women-and-tech.github.io" class="text-violet-600 hover:underline font-medium">IBM Women and Tech</a>
+          <span class="text-gray-300">/</span>
+          <span class="text-gray-500">Session 2</span>
         </div>
+        <p class="hidden sm:block text-xs tracking-widest uppercase text-gray-400">AI Risk &amp; Compliance</p>
       </div>
     </header>
 
     <slot />
 
     <!-- Footer -->
-    <footer class="border-t border-gray-200 mt-auto">
-      <div class="max-w-7xl mx-auto px-6 py-5 text-center text-xs text-gray-400">
-        IBM Women and Tech &mdash; Session 2 &mdash; built with <a href="https://astro.build" class="hover:underline">Astro</a>
+    <footer class="border-t border-gray-100 mt-auto">
+      <div class="max-w-7xl mx-auto px-8 py-5 flex items-center justify-between text-xs text-gray-400">
+        <span>Women &amp; Tech Event Series &nbsp;·&nbsp; IBM Innovation Studio</span>
+        <span>built with <a href="https://astro.build" class="hover:underline">Astro</a></span>
       </div>
     </footer>
 
