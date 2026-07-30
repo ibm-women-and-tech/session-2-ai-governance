@@ -1,0 +1,28 @@
+---
+import { getCollection, render } from 'astro:content';
+import DocsLayout from '../../../layouts/DocsLayout.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('steps');
+  return entries.map((entry) => {
+    // entry.id is like "step1/usecase-creation-model-owner"
+    const parts = entry.id.split('/');
+    const step = parts[0];   // e.g. "step1"
+    const slug = parts[1];   // e.g. "usecase-creation-model-owner"
+    return {
+      params: { step, slug },
+      props: { entry },
+    };
+  });
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const currentPath = `${import.meta.env.BASE_URL}/steps/${entry.id}`;
+---
+
+<DocsLayout title={entry.id} currentPath={currentPath}>
+  <article class="prose prose-slate max-w-none">
+    <Content />
+  </article>
+</DocsLayout>

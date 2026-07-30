@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const base = import.meta.env.BASE_URL;
+
+const steps = [
+  { number: "01", label: "Use Case Owner", description: "Define the AI use case and submit risks for assessment.", href: `${base}/steps/step1/usecase-creation-model-owner` },
+  { number: "02", label: "Risk & Compliance Officer", description: "Review, assess, and endorse the risk associated with the use case.", href: `${base}/steps/step2/risk-endorsement-bul` },
+  { number: "03", label: "Model Developer", description: "Build and evaluate prompts and agents for the generative AI use case.", href: `${base}/steps/step3/model-developer-tasks` },
+  { number: "04", label: "Model Validator", description: "Validate model performance, hallucination metrics, and governance readiness.", href: `${base}/steps/step4/model-validator-tasks` },
+  { number: "05", label: "AIOps Engineer", description: "Deploy and monitor the AI model on watsonx.governance.", href: `${base}/steps/step5/model-deployer-tasks` },
+  { number: "06", label: "Risk & Compliance Officer", description: "Review and mitigate incidents that arise once the model is in production.", href: `${base}/steps/step6/mitigating-incidents` },
+];
+---
+
+<BaseLayout title="Session 2 — AI Risk & Compliance">
+  <!-- Hero -->
+  <div class="bg-gray-900 text-white">
+    <div class="max-w-5xl mx-auto px-6 py-14">
+      <p class="text-sm font-semibold tracking-widest uppercase text-blue-400 mb-2">Session 2</p>
+      <h1 class="text-4xl font-bold mb-4">Managing AI Risk and Compliance<br />with watsonx.governance</h1>
+      <p class="text-gray-300 text-lg max-w-2xl leading-relaxed">
+        A story-driven, hands-on lab covering the full AI governance lifecycle — from use case creation to production incident management.
+      </p>
+      <a href={`${base}/steps/step1/usecase-creation-model-owner`}
+        class="inline-block mt-8 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-6 py-3 rounded transition-colors">
+        Start the lab →
+      </a>
+    </div>
+  </div>
+
+  <!-- Steps grid -->
+  <div class="max-w-5xl mx-auto px-6 py-14">
+    <h2 class="text-xl font-bold text-gray-900 mb-8">The 6-Step AI Governance Journey</h2>
+    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {steps.map((step) => (
+        <a href={step.href}
+          class="group block border border-gray-200 rounded-lg p-6 hover:shadow-md hover:border-blue-400 transition-all">
+          <span class="text-3xl font-bold text-gray-100 group-hover:text-blue-100">{step.number}</span>
+          <h3 class="mt-2 text-base font-semibold text-gray-900 group-hover:text-blue-700">{step.label}</h3>
+          <p class="mt-1 text-sm text-gray-500 leading-relaxed">{step.description}</p>
+          <div class="mt-4 text-sm font-medium text-blue-600 group-hover:underline">View guide →</div>
+        </a>
+      ))}
+    </div>
+
+    <!-- Prerequisites -->
+    <div class="mt-14 bg-blue-50 border border-blue-200 rounded-lg p-6">
+      <h2 class="text-base font-semibold text-blue-900 mb-3">Prerequisites</h2>
+      <ul class="text-sm text-blue-800 space-y-1 list-disc list-inside">
+        <li>Access credentials provided by the instructor</li>
+        <li>IBM Cloud login with assigned stakeholder role</li>
+        <li>Services: OpenPages with MRG (Main Labs), Model Management (Additional Labs)</li>
+      </ul>
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,125 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  currentPath?: string;
+}
+
+const { title, description, currentPath = '' } = Astro.props;
+const base = import.meta.env.BASE_URL;
+
+const steps = [
+  {
+    label: "Step 1 — Use Case Owner",
+    items: [
+      { label: "Use Case Creation", href: `${base}/steps/step1/usecase-creation-model-owner` },
+      { label: "Risk Review (RCO)", href: `${base}/steps/step1/risk-review-rco` },
+    ],
+  },
+  {
+    label: "Step 2 — Risk & Compliance Officer",
+    items: [
+      { label: "Risk Endorsement", href: `${base}/steps/step2/risk-endorsement-bul` },
+    ],
+  },
+  {
+    label: "Step 3 — Model Developer",
+    items: [
+      { label: "Developer Tasks", href: `${base}/steps/step3/model-developer-tasks` },
+      { label: "Model Development", href: `${base}/steps/step3/model-developement` },
+    ],
+  },
+  {
+    label: "Step 4 — Model Validator",
+    items: [
+      { label: "Validator Tasks", href: `${base}/steps/step4/model-validator-tasks` },
+      { label: "Model Validation", href: `${base}/steps/step4/model-validation` },
+    ],
+  },
+  {
+    label: "Step 5 — AIOps Engineer",
+    items: [
+      { label: "Deployer Tasks", href: `${base}/steps/step5/model-deployer-tasks` },
+      { label: "Model Deployment", href: `${base}/steps/step5/model-deployment` },
+    ],
+  },
+  {
+    label: "Step 6 — Risk & Compliance Officer",
+    items: [
+      { label: "Mitigating Incidents", href: `${base}/steps/step6/mitigating-incidents` },
+      { label: "Model Management Evals", href: `${base}/steps/step6/model-management-evals` },
+      { label: "Integrating External Evals", href: `${base}/steps/step6/integrating-external-evals` },
+    ],
+  },
+];
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {description && <meta name="description" content={description} />}
+    <title>{title} — AI Risk & Compliance</title>
+    <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
+  </head>
+  <body class="bg-white text-gray-900 min-h-screen flex flex-col">
+
+    <!-- Top nav -->
+    <header class="bg-gray-900 text-white border-b border-gray-700">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center">
+        <a href="https://ibm-women-and-tech.github.io" class="text-sm text-blue-400 hover:underline">← IBM Women and Tech</a>
+        <span class="text-gray-500 mx-2">/</span>
+        <a href={base} class="text-sm text-gray-300 hover:text-white">Session 2 — AI Risk &amp; Compliance</a>
+      </div>
+    </header>
+
+    <div class="flex flex-1 max-w-7xl mx-auto w-full">
+
+      <!-- Sidebar -->
+      <nav class="hidden md:block w-64 shrink-0 border-r border-gray-200 py-8 px-4 overflow-y-auto">
+        <a href={base} class="block text-sm font-semibold text-gray-900 mb-6 hover:text-blue-600">🏠 Lab Overview</a>
+        {steps.map((group) => (
+          <div class="mb-5">
+            <p class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2 px-2">{group.label}</p>
+            <ul class="space-y-0.5">
+              {group.items.map((item) => {
+                const isActive = currentPath === item.href;
+                return (
+                  <li>
+                    <a
+                      href={item.href}
+                      class={`block rounded px-2 py-1.5 text-sm transition-colors ${
+                        isActive
+                          ? 'bg-blue-50 text-blue-700 font-medium'
+                          : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
+                      }`}
+                    >
+                      {item.label}
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        ))}
+      </nav>
+
+      <!-- Content -->
+      <main class="flex-1 min-w-0 py-10 px-8">
+        <slot />
+      </main>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-200">
+      <div class="max-w-7xl mx-auto px-6 py-5 text-center text-xs text-gray-400">
+        IBM Women and Tech &mdash; Session 2 &mdash; built with <a href="https://astro.build" class="hover:underline">Astro</a>
+      </div>
+    </footer>
+
+  </body>
+</html>
