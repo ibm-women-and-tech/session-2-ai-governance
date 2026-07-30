@@ -3,13 +3,57 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 const base = import.meta.env.BASE_URL;
 
+const personas = [
+  { icon: "👤", role: "Use Case Owner", desc: "Defines the AI use case and submits risks for assessment." },
+  { icon: "🛡️", role: "Risk & Compliance Officer", desc: "Reviews, assesses and endorses risk. Manages production incidents." },
+  { icon: "👨‍💻", role: "Model Developer", desc: "Builds and evaluates prompts and agents in Prompt Lab & Agent Lab." },
+  { icon: "🔍", role: "Model Validator", desc: "Validates model performance, hallucination metrics and governance readiness." },
+  { icon: "⚙️", role: "AIOps Engineer", desc: "Deploys and monitors the AI model on watsonx.governance." },
+];
+
 const steps = [
-  { number: "01", label: "Use Case Owner", description: "Define the AI use case and submit risks for assessment.", href: `${base}/steps/step1/usecase-creation-model-owner` },
-  { number: "02", label: "Risk & Compliance Officer", description: "Review, assess, and endorse the risk associated with the use case.", href: `${base}/steps/step2/risk-endorsement-bul` },
-  { number: "03", label: "Model Developer", description: "Build and evaluate prompts and agents for the generative AI use case.", href: `${base}/steps/step3/model-developer-tasks` },
-  { number: "04", label: "Model Validator", description: "Validate model performance, hallucination metrics, and governance readiness.", href: `${base}/steps/step4/model-validator-tasks` },
-  { number: "05", label: "AIOps Engineer", description: "Deploy and monitor the AI model on watsonx.governance.", href: `${base}/steps/step5/model-deployer-tasks` },
-  { number: "06", label: "Risk & Compliance Officer", description: "Review and mitigate incidents that arise once the model is in production.", href: `${base}/steps/step6/mitigating-incidents` },
+  {
+    number: "01", label: "Use Case Owner",
+    guides: [
+      { title: "Use Case Creation", href: `${base}/steps/step1/usecase-creation-model-owner`, type: "MRG Console" },
+      { title: "Risk Review (RCO)", href: `${base}/steps/step1/risk-review-rco`, type: "MRG Console" },
+    ],
+  },
+  {
+    number: "02", label: "Risk & Compliance Officer",
+    guides: [
+      { title: "Risk Endorsement", href: `${base}/steps/step2/risk-endorsement-bul`, type: "MRG Console" },
+    ],
+  },
+  {
+    number: "03", label: "Model Developer",
+    guides: [
+      { title: "Developer Tasks", href: `${base}/steps/step3/model-developer-tasks`, type: "MRG Console" },
+      { title: "Model Development", href: `${base}/steps/step3/model-developement`, type: "Model Management" },
+    ],
+  },
+  {
+    number: "04", label: "Model Validator",
+    guides: [
+      { title: "Validator Tasks", href: `${base}/steps/step4/model-validator-tasks`, type: "MRG Console" },
+      { title: "Model Validation", href: `${base}/steps/step4/model-validation`, type: "Model Management" },
+    ],
+  },
+  {
+    number: "05", label: "AIOps Engineer",
+    guides: [
+      { title: "Deployer & Monitoring Tasks", href: `${base}/steps/step5/model-deployer-tasks`, type: "MRG Console" },
+      { title: "Model Deployment", href: `${base}/steps/step5/model-deployment`, type: "Model Management" },
+    ],
+  },
+  {
+    number: "06", label: "Risk & Compliance Officer",
+    guides: [
+      { title: "Mitigating Incidents", href: `${base}/steps/step6/mitigating-incidents`, type: "MRG Console" },
+      { title: "Model Management Evals", href: `${base}/steps/step6/model-management-evals`, type: "Model Management" },
+      { title: "Integrating External Evals", href: `${base}/steps/step6/integrating-external-evals`, type: "Model Management" },
+    ],
+  },
 ];
 ---
 
@@ -17,18 +61,16 @@ const steps = [
 
   <!-- Hero -->
   <div class="relative overflow-hidden border-b border-gray-100">
-    <div class="pointer-events-none absolute -top-20 -right-20 w-80 h-80 rounded-full"
-         style="background: radial-gradient(circle, rgba(167,139,250,0.3) 0%, rgba(196,181,253,0.08) 60%, transparent 80%);"></div>
-    <div class="pointer-events-none absolute bottom-0 left-0 w-64 h-64 rounded-full"
-         style="background: radial-gradient(circle, rgba(147,197,253,0.2) 0%, transparent 70%);"></div>
-    <div class="relative max-w-7xl mx-auto px-8 py-16">
+    <div class="pointer-events-none absolute top-0 right-0 w-[460px] h-[460px] rounded-full translate-x-1/3 -translate-y-1/3"
+         style="background: radial-gradient(circle, rgba(167,139,250,0.28) 0%, rgba(196,181,253,0.08) 55%, transparent 75%);"></div>
+    <div class="relative max-w-5xl mx-auto px-8 py-16">
       <p class="text-xs font-semibold tracking-widest uppercase text-violet-500 mb-3">Session 2 &nbsp;·&nbsp; Hands-on Lab</p>
       <h1 class="text-5xl font-bold leading-tight tracking-tight text-gray-900 max-w-3xl">
         Managing AI Risk and<br />
-        <span class="text-violet-600">Compliance</span> with watsonx.governance
+        <span class="text-violet-600">Compliance</span><br />with watsonx.governance
       </h1>
-      <p class="mt-5 text-lg text-gray-500 max-w-2xl leading-relaxed">
-        A story-driven lab covering the full AI governance lifecycle — from use case creation to production incident management.
+      <p class="mt-5 text-base text-gray-500 max-w-xl leading-relaxed">
+        Jose works at <strong>TechCorp Inc.</strong>, a large multinational enterprise using AI to improve HR processes like hiring and employee planning. AI was everywhere, but nobody really knew who built what, whether models were fair and safe, or what to do when something went wrong. So, Jose and his team decided to leverage <strong>watsonx.governance</strong> to make AI governance easy, clear, and reliable.
       </p>
       <a href={`${base}/steps/step1/usecase-creation-model-owner`}
         class="inline-block mt-8 bg-violet-600 hover:bg-violet-700 text-white text-sm font-semibold px-7 py-3 rounded-xl transition-colors">
@@ -37,37 +79,74 @@ const steps = [
     </div>
   </div>
 
-  <!-- Steps grid -->
-  <div class="max-w-7xl mx-auto px-8 py-16">
-    <p class="text-xs font-semibold tracking-widest uppercase text-violet-500 mb-2">The Journey</p>
-    <h2 class="text-2xl font-bold text-gray-900 mb-10">6-step AI Governance workflow</h2>
-
-    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-      {steps.map((step) => (
-        <a href={step.href}
-          class="group block border border-gray-200 rounded-2xl p-6 hover:border-violet-300 hover:shadow-md transition-all">
-          <div class="flex items-center gap-3 mb-4">
-            <span class="flex items-center justify-center w-9 h-9 rounded-xl bg-violet-50 border border-violet-200 text-violet-600 text-sm font-bold shrink-0">
-              {step.number}
-            </span>
-          </div>
-          <h3 class="text-base font-semibold text-gray-900 group-hover:text-violet-700 mb-1">{step.label}</h3>
-          <p class="text-sm text-gray-500 leading-relaxed">{step.description}</p>
-          <div class="mt-4 text-sm font-semibold text-violet-600 group-hover:underline">View guide →</div>
-        </a>
-      ))}
-    </div>
+  <div class="max-w-5xl mx-auto px-8 py-14 space-y-16">
 
     <!-- Prerequisites -->
-    <div class="mt-14 border border-violet-200 bg-violet-50 rounded-2xl p-7">
+    <div class="border border-violet-200 bg-violet-50 rounded-2xl p-7">
       <p class="text-xs font-semibold tracking-widest uppercase text-violet-500 mb-2">Before you start</p>
       <h2 class="text-base font-semibold text-gray-900 mb-4">Prerequisites</h2>
       <ul class="text-sm text-gray-600 space-y-2">
-        <li class="flex gap-2"><span class="text-violet-400 font-bold">·</span> Access credentials provided by the instructor</li>
-        <li class="flex gap-2"><span class="text-violet-400 font-bold">·</span> IBM Cloud login with assigned stakeholder role</li>
-        <li class="flex gap-2"><span class="text-violet-400 font-bold">·</span> Services: OpenPages with MRG (Main Labs), Model Management (Additional Labs)</li>
+        <li class="flex gap-2"><span class="text-violet-400 font-bold mt-0.5">·</span> Access credentials provided by the instructor</li>
+        <li class="flex gap-2"><span class="text-violet-400 font-bold mt-0.5">·</span> IBM Cloud login with assigned stakeholder role</li>
+        <li class="flex gap-2"><span class="text-violet-400 font-bold mt-0.5">·</span> Services: OpenPages with MRG (Main Labs), Model Management (Additional Labs)</li>
       </ul>
     </div>
+
+    <!-- Personas -->
+    <div>
+      <p class="text-xs font-semibold tracking-widest uppercase text-violet-500 mb-2">The Team</p>
+      <h2 class="text-xl font-bold text-gray-900 mb-6">Who's involved in AI Governance?</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {personas.map((p) => (
+          <div class="flex gap-3 border border-gray-100 rounded-xl p-4 bg-gray-50">
+            <span class="text-2xl">{p.icon}</span>
+            <div>
+              <p class="text-sm font-semibold text-gray-900">{p.role}</p>
+              <p class="text-xs text-gray-500 mt-1 leading-relaxed">{p.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Lab Guides -->
+    <div>
+      <p class="text-xs font-semibold tracking-widest uppercase text-violet-500 mb-2">The Journey</p>
+      <h2 class="text-xl font-bold text-gray-900 mb-8">Lab guides directory</h2>
+
+      <div class="space-y-4">
+        {steps.map((step) => (
+          <div class="border border-gray-200 rounded-2xl overflow-hidden">
+            <!-- Step header -->
+            <div class="flex items-center gap-3 px-5 py-3 bg-gray-50 border-b border-gray-200">
+              <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-violet-100 border border-violet-200 text-violet-700 text-xs font-bold shrink-0">
+                {step.number}
+              </span>
+              <span class="text-sm font-semibold text-gray-700">{step.label}</span>
+            </div>
+            <!-- Guides -->
+            <div class="divide-y divide-gray-100">
+              {step.guides.map((guide) => (
+                <a href={guide.href}
+                   class="flex items-center justify-between px-5 py-3 hover:bg-violet-50 transition-colors group">
+                  <span class="text-sm text-gray-800 group-hover:text-violet-700 font-medium">{guide.title}</span>
+                  <span class="text-xs text-gray-400 bg-gray-100 rounded px-2 py-0.5 shrink-0 ml-4">{guide.type}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Closing quote -->
+    <blockquote class="border-l-4 border-violet-300 bg-violet-50 rounded-r-2xl px-6 py-5">
+      <p class="text-sm text-violet-800 italic leading-relaxed">
+        "Before watsonx.governance, we had no clear process. Now everyone knows what to do, models are better, and we're always ready for audits."
+      </p>
+      <footer class="mt-2 text-xs text-violet-500 font-semibold">— Jose, Chief Risk Officer, TechCorp Inc.</footer>
+    </blockquote>
+
   </div>
 
 </BaseLayout>

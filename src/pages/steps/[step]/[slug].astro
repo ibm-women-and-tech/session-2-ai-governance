@@ -1,14 +1,12 @@
 ---
 import { getCollection, render } from 'astro:content';
 import DocsLayout from '../../../layouts/DocsLayout.astro';
-
 export async function getStaticPaths() {
   const entries = await getCollection('steps');
   return entries.map((entry) => {
-    // entry.id is like "step1/usecase-creation-model-owner"
     const parts = entry.id.split('/');
-    const step = parts[0];   // e.g. "step1"
-    const slug = parts[1];   // e.g. "usecase-creation-model-owner"
+    const step = parts[0];
+    const slug = parts[1];
     return {
       params: { step, slug },
       props: { entry },
@@ -16,13 +14,102 @@ export async function getStaticPaths() {
   });
 }
 
+const stepLabels: Record<string, string> = {
+  step1: 'Use Case Owner',
+  step2: 'Risk & Compliance Officer',
+  step3: 'Model Developer',
+  step4: 'Model Validator',
+  step5: 'AIOps Engineer',
+  step6: 'Risk & Compliance Officer',
+};
+
+const stepNumbers: Record<string, string> = {
+  step1: '01', step2: '02', step3: '03',
+  step4: '04', step5: '05', step6: '06',
+};
+
+const slugTitles: Record<string, string> = {
+  'usecase-creation-model-owner': 'Use Case Creation',
+  'risk-review-rco': 'Risk Review (RCO)',
+  'risk-endorsement-bul': 'Risk Endorsement',
+  'model-developer-tasks': 'Developer Tasks',
+  'model-developement': 'Model Development',
+  'model-validator-tasks': 'Validator Tasks',
+  'model-validation': 'Model Validation',
+  'model-deployer-tasks': 'Deployer Tasks',
+  'model-deployment': 'Model Deployment',
+  'mitigating-incidents': 'Mitigating Incidents',
+  'model-management-evals': 'Model Management Evals',
+  'integrating-external-evals': 'Integrating External Evals',
+};
+
 const { entry } = Astro.props;
+const parts = entry.id.split('/');
+const step = parts[0];
+const slug = parts[1];
+const base = import.meta.env.BASE_URL;
+const currentPath = `${base}/steps/${step}/${slug}`;
+const pageTitle = slugTitles[slug] ?? slug;
+const stepLabel = stepLabels[step] ?? step;
+const stepNumber = stepNumbers[step] ?? '';
+
 const { Content } = await render(entry);
-const currentPath = `${import.meta.env.BASE_URL}/steps/${entry.id}`;
+
+// Compute the per-step assets base URL for this page's images.
+// Markdown uses src="./assets/foo.png" — relative to the .md file location (steps/stepN/).
+// The rendered page URL is /session-2-ai-governance/steps/stepN/slug/
+// So we expose the correct absolute base for the step's assets folder.
+const assetsBase = `${base}/steps/${step}/assets`;
 ---
 
-<DocsLayout title={entry.id} currentPath={currentPath}>
-  <article class="prose prose-slate max-w-none">
+<DocsLayout title={pageTitle} currentPath={currentPath}>
+  <!-- Page header -->
+  <div class="mb-8 pb-6 border-b border-gray-100">
+    <p class="text-xs font-semibold tracking-widest uppercase text-violet-500 mb-2">
+      Step {stepNumber} &nbsp;·&nbsp; {stepLabel}
+    </p>
+    <h1 class="text-3xl font-bold text-gray-900">{pageTitle}</h1>
+  </div>
+
+  <article
+    data-assets-base={assetsBase}
+    data-site-base={base}
+    class="prose prose-slate max-w-none
+      prose-headings:font-bold prose-headings:text-gray-900
+      prose-a:text-violet-600 prose-a:no-underline hover:prose-a:underline
+      prose-code:bg-gray-100 prose-code:px-1 prose-code:rounded prose-code:text-sm
+      prose-img:rounded-lg prose-img:border prose-img:border-gray-200 prose-img:shadow-sm
+      prose-blockquote:border-violet-300 prose-blockquote:bg-violet-50 prose-blockquote:rounded-r-lg
+      prose-table:text-sm">
     <Content />
   </article>
 </DocsLayout>
+
+<script>
+  const article = document.querySelector('article[data-assets-base]') as HTMLElement | null;
+  if (article) {
+    const assetsBase = article.dataset.assetsBase ?? '';
+    const siteBase = article.dataset.siteBase ?? '/session-2-ai-governance';
+
+    // Fix image paths: ./assets/foo.png → absolute /session-2-ai-governance/steps/stepN/assets/foo.png
+    article.querySelectorAll('img').forEach((img) => {
+      const src = img.getAttribute('src') ?? '';
+      if (src.startsWith('./assets/') || src.startsWith('assets/')) {
+        const filename = src.replace(/^\.?\/assets\//, '');
+        img.setAttribute('src', `${assetsBase}/${filename}`);
+      }
+    });
+
+    // Fix back-links in markdown footer
+    article.querySelectorAll('a').forEach((a) => {
+      const href = a.getAttribute('href') ?? '';
+      if (href.includes('README.md')) {
+        a.setAttribute('href', siteBase || '/');
+        a.textContent = '← Back to lab overview';
+      } else if (href.includes('guides-directory.md')) {
+        a.setAttribute('href', `${siteBase}/guides-directory`);
+        a.textContent = '← Back to directory';
+      }
+    });
+  }
+</script>
