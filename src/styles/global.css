@@ -1,2 +1,71 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
+
+html {
+  scroll-behavior: smooth;
+}
+
+.prose :is(h1, h2, h3, h4) {
+  scroll-margin-top: 1.5rem;
+}
+
+/* Mobile step navigation drawer (DocsLayout) */
+@media (max-width: 767px) {
+  #sidebar-nav {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    background: white;
+    overflow-y: auto;
+    padding-top: 1.25rem;
+  }
+  body.mobile-nav-open #sidebar-nav {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Click-to-zoom lightbox for lab screenshots */
+.prose img {
+  cursor: zoom-in;
+}
+
+#img-lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  background: rgba(15, 15, 20, 0.9);
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  cursor: zoom-out;
+}
+
+#img-lightbox.open {
+  display: flex;
+}
+
+#img-lightbox img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 0.5rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+#img-lightbox-close {
+  position: fixed;
+  top: 1.25rem;
+  right: 1.5rem;
+  color: white;
+  font-size: 1.75rem;
+  line-height: 1;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

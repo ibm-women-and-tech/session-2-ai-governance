@@ -53,16 +53,32 @@ const pageTitle = slugTitles[slug] ?? slug;
 const stepLabel = stepLabels[step] ?? step;
 const stepNumber = stepNumbers[step] ?? '';
 
-const { Content } = await render(entry);
+const { Content, headings } = await render(entry);
+// Drop the first heading: it's the document's own title, already shown
+// separately in the page header above the article.
+const tocHeadings = headings.slice(1);
 
-// Compute the per-step assets base URL for this page's images.
-// Markdown uses src="./assets/foo.png" — relative to the .md file location (steps/stepN/).
-// The rendered page URL is /session-2-ai-governance/steps/stepN/slug/
-// So we expose the correct absolute base for the step's assets folder.
-const assetsBase = `${base}/steps/${step}/assets`;
+// Markdown source lives at steps/stepN/foo.md and uses GitHub-relative paths
+// like "./assets/foo.png" or "../step5/assets/bar.png". The rendered page URL
+// is /session-2-ai-governance/steps/stepN/slug/, so those relative paths don't
+// resolve correctly in the browser — content-links.ts re-resolves them against
+// this stepBase (the absolute URL standing in for the .md file's directory).
+const stepBase = `${base}/steps/${step}`;
+
+// Build a filename -> real route map so relative markdown links written for
+// GitHub (e.g. "./risk-review-rco.md") resolve to this site's actual Astro
+// routes instead of 404ing.
+const allSteps = await getCollection('steps');
+const routeMap: Record<string, string> = {};
+for (const e of allSteps) {
+  const [s, sl] = e.id.split('/');
+  routeMap[sl] = `${base}/steps/${s}/${sl}`;
+}
+
+const contentLinksConfig = JSON.stringify({ siteBase: base, stepBase, routeMap });
 ---
 
-<DocsLayout title={pageTitle} currentPath={currentPath}>
+<DocsLayout title={pageTitle} currentPath={currentPath} headings={tocHeadings}>
   <!-- Page header -->
   <div class="mb-8 pb-6 border-b border-gray-100">
     <p class="text-xs font-semibold tracking-widest uppercase text-violet-500 mb-2">
@@ -72,44 +88,21 @@ const assetsBase = `${base}/steps/${step}/assets`;
   </div>
 
   <article
-    data-assets-base={assetsBase}
-    data-site-base={base}
+    data-assets-base={stepBase}
     class="prose prose-slate max-w-none
       prose-headings:font-bold prose-headings:text-gray-900
-      prose-a:text-violet-600 prose-a:no-underline hover:prose-a:underline
+      prose-a:text-violet-600 prose-a:no-underline prose-a:hover:underline
       prose-code:bg-gray-100 prose-code:px-1 prose-code:rounded prose-code:text-sm
       prose-img:rounded-lg prose-img:border prose-img:border-gray-200 prose-img:shadow-sm
       prose-blockquote:border-violet-300 prose-blockquote:bg-violet-50 prose-blockquote:rounded-r-lg
       prose-table:text-sm">
     <Content />
   </article>
+
+  <script type="application/json" id="content-links-config" set:html={contentLinksConfig} />
 </DocsLayout>
 
 <script>
-  const article = document.querySelector('article[data-assets-base]') as HTMLElement | null;
-  if (article) {
-    const assetsBase = article.dataset.assetsBase ?? '';
-    const siteBase = article.dataset.siteBase ?? '/session-2-ai-governance';
-
-    // Fix image paths: ./assets/foo.png → absolute /session-2-ai-governance/steps/stepN/assets/foo.png
-    article.querySelectorAll('img').forEach((img) => {
-      const src = img.getAttribute('src') ?? '';
-      if (src.startsWith('./assets/') || src.startsWith('assets/')) {
-        const filename = src.replace(/^\.?\/assets\//, '');
-        img.setAttribute('src', `${assetsBase}/${filename}`);
-      }
-    });
-
-    // Fix back-links in markdown footer
-    article.querySelectorAll('a').forEach((a) => {
-      const href = a.getAttribute('href') ?? '';
-      if (href.includes('README.md')) {
-        a.setAttribute('href', siteBase || '/');
-        a.textContent = '← Back to lab overview';
-      } else if (href.includes('guides-directory.md')) {
-        a.setAttribute('href', `${siteBase}/guides-directory`);
-        a.textContent = '← Back to directory';
-      }
-    });
-  }
+  import { fixContentLinks } from '../../../scripts/content-links';
+  fixContentLinks();
 </script>

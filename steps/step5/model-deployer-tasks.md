@@ -1,11 +1,11 @@
-# 👨‍🔬 AIOps Engineer – Deploy and Track Model in Production
+# AIOps Engineer – Deploy and Track Model in Production
 
-> ⚠️ **Note:** **AIOps Engineer** or **AI Engineer** are responsible to deploy the AI Systems to a production deployment space.
+> **Note:** **AIOps Engineer** or **AI Engineer** are responsible to deploy the AI Systems to a production deployment space.
 Please access this [Guide](./model-deployment.md) if you want to actually perform those task on watsonx, otherwise ask one of the instructor to perform the technical tasks for your behalf or just skip this step (you can upload a faulty dataset to simulate an incident later on). As a **AIOps Engineer**, you are still responsible to document your deployment on the Governance Console. See Deployment Responsabilities below:
 
 ---
 
-# 🎯 Deployment Responsibilities
+# Deployment Responsibilities
 
 As a **Model Deployer**, your primary responsibilities include:
 
@@ -26,13 +26,13 @@ As a **Model Deployer**, your primary responsibilities include:
 
 ---
 
-# 🔍 Deployment Approval Workflow
+# Deployment Approval Workflow
 
 Since the Model Validator have submitted the Use Case for Deployment Approval. The Use Case is now in the Deployment Approval Workflow
 
 <img width="800" alt="Deployment Approval Process" src="./assets/deployment-process.png">
 
-## 1️⃣ Approve Use Case for Deployment
+## 1. Approve Use Case for Deployment
 
 Go to the home screen, on the **My Tasks**, you should find one task:
 
@@ -46,7 +46,7 @@ Impersonate the **AI Committe**, and approve the Use Case for deployment:
 
 
 ---
-## 2️⃣ Deploy Asset
+## 2. Deploy Asset
 
 Go to the home screen, on the **My Tasks**, you should find one task:
 
@@ -65,7 +65,7 @@ In the end, your Use Case shoud look like this (with the status **In Operation**
 
 ---
 
-# ✅ Summary
+# Summary
 
 Following these steps ensures:
 
@@ -74,7 +74,7 @@ Following these steps ensures:
 
 ---
 
-# 🎉 Congratulations!
+# Congratulations!
 
 By deploying and tracking your **Agentic RAG prompt**, you ensure **reliable, compliant, and production-ready AI services** for HR process automation!
 

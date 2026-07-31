@@ -7,7 +7,7 @@
 - [Introduction](#introduction)
 - [Hands-on step-by-step lab](#hands-on-lab)
 - [Guide directory](./guides-directory.md)
-- [Credential directory](./credential-directory.md)
+- Credential directory
 
 -------
 # Introduction

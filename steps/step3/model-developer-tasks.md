@@ -27,19 +27,19 @@ Go back to the Use Case on the governance console.
 
 Access the Use Case, review the value of the field **technical owner**. If not set, set the value to yourself and click on Save:
 
-<img width="800" alt="New Asset Creation" src="./assets/developer-nominate-yourself-technical-owner.png">
+<img width="800" alt="Access the Use Case, review the value of the field technical owner. If not set, set the value to yourself and..." src="./assets/developer-nominate-yourself-technical-owner.png">
 
 The Use Case was approved for development, you were assigned or self-assigned this Use Case, just click on Action --> Start Use Case Developement and Validation process
 
-<img width="800" alt="New Asset Creation" src="./assets/developer_starting_development.png">
+<img width="800" alt="The Use Case was approved for development, you were assigned or self-assigned this Use Case, just click on..." src="./assets/developer_starting_development.png">
 
 This will kick-start the Development and Validation process:
 
-<img width="800" alt="New Asset Creation" src="./assets/developer_process_view.png">
+<img width="800" alt="This will kick-start the Development and Validation process:" src="./assets/developer_process_view.png">
 
 Next, you need to actually perform the developement of the AI System behind the Use Case, following the requirements:
 
-### 🧠 Agentic RAG Capabilities for HR Policy Q&A:
+### Agentic RAG Capabilities for HR Policy Q&A:
 
 As a developer, you will need to fulfill there requirements to develop the UseCase:
 
@@ -69,21 +69,21 @@ Because watsonx is tighly integrated with Model Risk Governance, we were able to
 
 Go back to the Governance Console and to the Use Case, note that the status has changed to **Under development**
 
-<img width="800" alt="New Asset Creation" src="./assets/developer_uc_status_underdevelopment.png">
+<img width="800" alt="Go back to the Governance Console and to the Use Case, note that the status has changed to Under development" src="./assets/developer_uc_status_underdevelopment.png">
 
 Scroll Down to the Models section, you should see two new entries:
 
-<img width="800" alt="New Asset Creation" src="./assets/developer_uc_models.png">
+<img width="800" alt="Scroll Down to the Models section, you should see two new entries:" src="./assets/developer_uc_models.png">
 
 Click on each of the entries:
 
 First on the Prompt Template entry:
-<img width="800" alt="New Asset Creation" src="./assets/developer_prompt_review.png">
+<img width="800" alt="First on the Prompt Template entry:" src="./assets/developer_prompt_review.png">
 
 Notice the status is set to **proposed** and review all the information pushed from the ModelManagement module.
 
 Secondly on the Model entry:
-<img width="800" alt="New Asset Creation" src="./assets/developer_model_review.png">
+<img width="800" alt="Secondly on the Model entry:" src="./assets/developer_model_review.png">
 
 Notice the status is set to **proposed** and review all the information pushed from the ModelManagement module
 

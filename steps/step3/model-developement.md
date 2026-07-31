@@ -9,7 +9,7 @@ This repository contains the Model Developer's Guide, focusing on automating HR 
 
 **Business Goal:** Automate question/answering process from HR policies using IBM watsonx **AutoRAG**, enabling faster, bias-free hiring while maintaining compliance in OpenPages.
 
-### 🧠 Agentic RAG Capabilities for HR Policy Q&A:
+### Agentic RAG Capabilities for HR Policy Q&A:
 
 1. Ingest and index HR policy documents (PDFs, DOCX, web pages, internal knowledge bases)
 2. Allow users to ask natural language questions about HR policies (e.g., leave, benefits, conduct, compliance)
@@ -49,11 +49,11 @@ The Agentic RAG model is already developed and deployed. To access it:
 
 4. On the **watsonx Studio** homepage:
    
-* Create a new project as explained in the steps linked here: [Steps for creating project](../..//instructor/create-project.md)
+* Create a new project as explained in the steps linked here: Steps for creating project
   
 * After creating the project, go to the **Assets** tab and click on **New Asset**:
   
-<img width="800" alt="New Asset Creation" src="./assets/Model13.png">
+<img width="800" alt="After creating the project, go to the Assets tab and click on New Asset:" src="./assets/Model13.png">
 
 * Select **Working with data or models in Python or R notebooks** from the **All** option on the sidebar:
   
@@ -79,19 +79,19 @@ The Agentic RAG model is already developed and deployed. To access it:
 
 -> In this notebook, update the first cell:
 
-<img width="800" alt="Notebook Ready" src="./assets/developement-model0.png">
+<img width="800" alt="In this notebook, update the first cell." src="./assets/developement-model0.png">
 
-- Use **watsonx_api_key** created initially [Create API key](../../instructor/api_key_setup.md)
+- Use **watsonx_api_key** created initially Create API key
 - Use **ModelManagement Service ID** communicated by your instructor (he should have configured and connected a ModelManagement aka OpenScale instance for you)
 - Access **project_id** by navigating: hamburger menu → projects → view all projects → your project-> Manage tab -> copy project id.
 - Provide a unique name to your development **AGENTIC_RAG_LC_DEV_NAME**
 
 
-<img width="800" alt="Notebook Ready" src="./assets/project-id.png">
+<img width="800" alt="Provide a unique name to your development AGENTIC_RAG_LC_DEV_NAME" src="./assets/project-id.png">
    
 Run the first cell and proceed with the rest of the notebook
 
-<img width="800" alt="Notebook Ready" src="./assets/Model18.png">
+<img width="800" alt="Run the first cell and proceed with the rest of the notebook" src="./assets/Model18.png">
 
 ---
 
@@ -115,7 +115,7 @@ Navigate to the **Detached Prompt Template** asset within the project on **Opens
 <img width="800" alt="OpenScale Dashboard" src="./assets/developer_openscale_dashboard.png">
 
 Click on Agentic RAG Testing
-<img width="800" alt="Detached Prompt Template UI" src="./assets/Model8.png">
+<img width="800" alt="Click on Agentic RAG Testing" src="./assets/Model8.png">
 
 You have set up metric collection for the testing phase to evaluate your developement.
 
@@ -125,34 +125,34 @@ You have set up metric collection for the testing phase to evaluate your develop
 1. Go to dataplatform.cloud.ibm.com watsonx studio
 
 
-<img width="800" alt="Detached Prompt Template UI" src="./assets/Model20.png">
+<img width="800" alt="Go to dataplatform.cloud.ibm.com watsonx studio" src="./assets/Model20.png">
 
 
 2. Navigate: hamburger menu → projects → view all projects → HR Process Automation (select this project)
 
    
 
-<img width="800" alt="Detached Prompt Template UI" src="./assets/Model23.png">
+<img width="800" alt="Navigate: hamburger menu → projects → view all projects → HR Process Automation (select this project)" src="./assets/Model23.png">
 
 
 3. Inside this project, you will find **Detached prompt template** named **Agentic RAG** - select that
 
    
 
-<img width="800" alt="Detached Prompt Template UI" src="./assets/Model25.png">  
+<img width="800" alt="Inside this project, you will find Detached prompt template named Agentic RAG - select that" src="./assets/Model25.png">  
 
 
 4. After selecting, you will be onboarded to **AI Factsheet**
 
 
-<img width="800" alt="Detached Prompt Template UI" src="./assets/Model26.png">
+<img width="800" alt="After selecting, you will be onboarded to AI Factsheet" src="./assets/Model26.png">
 
 
 5. Now click on **Track in AI use case**  to associate asset to **AI Use case** click on **Go to AI Use cases** as project is not associated to **AI Use case** :
 
 
    
-<img width="800" alt="Detached Prompt Template UI" src="./assets/Model51.png">
+<img width="800" alt="Now click on Track in AI use case  to associate asset to AI Use case click on Go to AI Use cases as project..." src="./assets/Model51.png">
 
 
 
@@ -160,7 +160,7 @@ You have set up metric collection for the testing phase to evaluate your develop
 
 
 
-<img width="800" alt="Detached Prompt Template UI" src="./assets/Model52.png">
+<img width="800" alt="Select AI Use case created by Use case owner initially :" src="./assets/Model52.png">
 
 
 
@@ -168,33 +168,33 @@ You have set up metric collection for the testing phase to evaluate your develop
 
 
 
-<img width="800" alt="Detached Prompt Template UI" src="./assets/ModelAssociationDevProject.png">
+<img width="800" alt="Go to Associated workspaces section and Select Development phase and click on Associate Workspace:" src="./assets/ModelAssociationDevProject.png">
 
 
 
 9. Here, Select **Project** just created initially and click **Save**
 
-<img width="800" alt="Detached Prompt Template UI" src="./assets/ModelSelectDevProject.png">
+<img width="800" alt="Here, Select Project just created initially and click Save" src="./assets/ModelSelectDevProject.png">
 
 10. Back to the **Associated workspaces** section and Select **Validation** phase and click on **Associate Workspace**:
 
-<img width="800" alt="Detached Prompt Template UI" src="./assets/ModelAssociationValidationSpace.png">
+<img width="800" alt="Back to the Associated workspaces section and Select Validation phase and click on Associate Workspace:" src="./assets/ModelAssociationValidationSpace.png">
 
-11. Here select the **Bootcamp Validation Space**  or if not created Click on **+New Space** and follow [Deployment Creation Steps](../../instructor/deploy-project.md) these steps for creating deployment space for **Testing** Deployment stage. Click on Save:
+11. Here select the **Bootcamp Validation Space**  or if not created Click on **+New Space** and follow Deployment Creation Steps these steps for creating deployment space for **Testing** Deployment stage. Click on Save:
 
-<img width="800" alt="Detached Prompt Template UI" src="./assets/ModelSelectValidationSpace.png">
+<img width="800" alt="Here select the Bootcamp Validation Space  or if not created Click on +New Space and follow Deployment..." src="./assets/ModelSelectValidationSpace.png">
 
 12.  Back to the **Associated workspaces** section and Select **Operation** phase and click on **Associate Workspace**:
 
-<img width="800" alt="Detached Prompt Template UI" src="./assets/ModelAssociationOperationSpace.png">
+<img width="800" alt="Back to the Associated workspaces section and Select Operation phase and click on Associate Workspace:" src="./assets/ModelAssociationOperationSpace.png">
 
-13. Here select the **Bootcamp Production Space**  or if not created Click on **+New Space** and follow [Deployment Creation Steps](../../instructor/deploy-project.md) these steps for creating deployment space for **Production** Deployment stage. Click on Save:
+13. Here select the **Bootcamp Production Space**  or if not created Click on **+New Space** and follow Deployment Creation Steps these steps for creating deployment space for **Production** Deployment stage. Click on Save:
 
-<img width="800" alt="Detached Prompt Template UI" src="./assets/ModelSelectProductionSpace.png">
+<img width="800" alt="Here select the Bootcamp Production Space  or if not created Click on +New Space and follow Deployment..." src="./assets/ModelSelectProductionSpace.png">
 
 14. Back to the **AI Use case** now you can see the associated workspaces in all three phases :
 
-<img width="800" alt="Detached Prompt Template UI" src="./assets/ModelReviewWorkspacesAssociation.png">
+<img width="800" alt="Back to the AI Use case now you can see the associated workspaces in all three phases :" src="./assets/ModelReviewWorkspacesAssociation.png">
 
 
 15. Now **AI Use case** is associated to **project** and **deployment space**. In **Associated Workspaces** Section Click on Arrow beside **your project** under **Development** phase:
@@ -203,54 +203,54 @@ You have set up metric collection for the testing phase to evaluate your develop
 16. In project go to **Assets** tab select **Agentic RAG testing** asset and click on three dot then select **Go to AI factsheet**:
 
 
-<img width="800" alt="Detached Prompt Template UI" src="./assets/Model63.png">    
+<img width="800" alt="In project go to Assets tab select Agentic RAG testing asset and click on three dot then select Go to AI..." src="./assets/Model63.png">    
 
 
 12. Now **AI Use case** is getting tracked in **Development** phase so Click on **Track in AI Use case**:
 
 
-<img width="800" alt="Detached Prompt Template UI" src="./assets/Model57.png">
+<img width="800" alt="Now AI Use case is getting tracked in Development phase so Click on Track in AI Use case:" src="./assets/Model57.png">
 
 
 
 13. Select Approach set as **Default Approach** or click on **+New Approach** for defining one path for solving the goal of the use case. Click on **Next**:
 
 
-<img width="800" alt="Detached Prompt Template UI" src="./assets/Model58.png">
+<img width="800" alt="Select Approach set as Default Approach or click on +New Approach for defining one path for solving the goal..." src="./assets/Model58.png">
 
 
-<img width="800" alt="Detached Prompt Template UI" src="./assets/Model59.png">
+<img width="800" alt="Select Approach set as Default Approach or click on +New Approach for defining one path for solving the goal..." src="./assets/Model59.png">
 
 
 
 14. Associate the **asset** with an existing model record or create a new model record in OpenPages. This will sync the tracked model facts between Model inventory and OpenPages.Click on **Next**.
 
 
-<img width="800" alt="Detached Prompt Template UI" src="./assets/Model60.png">
+<img width="800" alt="Associate the asset with an existing model record or create a new model record in OpenPages. This will sync..." src="./assets/Model60.png">
 
 
 
 15. Choose the starting point for this approach(Experimental,Stable,Custom) any one of them for **version** tracking. Click on **Next**:
 
 
-<img width="800" alt="Detached Prompt Template UI" src="./assets/Model61.png">
+<img width="800" alt="Choose the starting point for this approach (Experimental, Stable, Custom) for version tracking, then click Next." src="./assets/Model61.png">
 
 
 
 16. Review to make sure that your detached prompt template is stable before you track it in an **AI use case**. Click on **Track Asset**:
 
 
- <img width="800" alt="Detached Prompt Template UI" src="./assets/Model62.png">   
+ <img width="800" alt="Review to make sure that your detached prompt template is stable before you track it in an AI use case. Click..." src="./assets/Model62.png">   
 
 
 Finally **Agentic RAG** getting tracked in **AI Use case**. Click on **Agentic RAG Testing** under asset record to view it in **Governance Console**
 
 
-<img width="800" alt="Detached Prompt Template UI" src="./assets/Model63.png"> 
+<img width="800" alt="Finally Agentic RAG getting tracked in AI Use case. Click on Agentic RAG Testing under asset record to view..." src="./assets/Model63.png"> 
 
 
 
-<img width="800" alt="Detached Prompt Template UI" src="./assets/Model64.png"> 
+<img width="800" alt="Finally Agentic RAG getting tracked in AI Use case. Click on Agentic RAG Testing under asset record to view..." src="./assets/Model64.png"> 
 
 
 17. Now go back to the [Model Developer Tasks Guide](../step3/model-developer-tasks.md) to finish the developement declaration and start the validation process.
@@ -269,8 +269,8 @@ Finally **Agentic RAG** getting tracked in **AI Use case**. Click on **Agentic R
 ## Resources
 
 - [IBM Cloud Platform](https://cloud.ibm.com/login)
-- [Project Creation Steps](../../instructor/create-project.md)
-- [Create API key](../../instructor/api_key_setup.md)
+- Project Creation Steps
+- Create API key
 - [Agentic RAG Notebook - Dallas](./notebook/agentic-rag.ipynb)
 - [Agentic RAG Notebook - Frankfurt](./notebook/agentic-rag-eu-de.ipynb)
 

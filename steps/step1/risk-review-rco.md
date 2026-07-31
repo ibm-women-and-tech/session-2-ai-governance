@@ -1,21 +1,21 @@
-# 🛡️ Risk Review Process for Use case owner
+# Risk Review Process for Use case owner
 
-> ⚠️ **Login Note:** Make sure you are logged into **IBM OpenPages** using the **Use case owner** role before starting this task.
+> **Login Note:** Make sure you are logged into **IBM OpenPages** using the **Use case owner** role before starting this task.
 
- <img width="800" alt="image" src="./assets/usecase18.png">
+ <img width="800" alt="Make sure you are logged into IBM OpenPages using the Use case owner role before starting this task." src="./assets/usecase18.png">
  
 > This role is required to review and approve risks submitted by the Use Case Owner.
 
 
 ---
 
-## 📌 Overview
+## Overview
 
 As a **Use Case Owner**, your responsibility is to review risks submitted as part of a Use Case and determine the appropriate risk status. This process ensures that all risks are evaluated, documented, and aligned with your organization's governance standards.
 
 ---
 
-## 🧩 Workflow Context
+## Workflow Context
 
 This step occurs **after** a Use Case Owner:
 
@@ -30,7 +30,7 @@ You will now:
 * Forward the task for stakeholder approval.
 
 
-🧭 Steps:
+Steps:
 
 | Step               | Action                        | Status Update                 |
 | ------------------ | ----------------------------- | ----------------------------- |
@@ -40,40 +40,40 @@ You will now:
 
 ---
 
-## 🛠️ Step-by-Step Task Instructions
+## Step-by-Step Task Instructions
 
-### 1️⃣ Risks are populated and now **Use Case Owner** can review each risk:
+### 1. Risks are populated and now **Use Case Owner** can review each risk:
 
   
-<img width="800" alt="image" src="./assets/Model50.png">
+<img width="800" alt="Risks are populated and now Use Case Owner can review each risk." src="./assets/Model50.png">
 
 ---
 
-### 2️⃣ Start Risk Assessement
+### 2. Start Risk Assessement
 
 * Open the risk record.
-<img width="800" alt="image" src="./assets/Risk01.png">
+<img width="800" alt="Open the risk record." src="./assets/Risk01.png">
 
 
 * Click on **Start Model Risk Assessment**, available on the Actions button. Click on Continue.
 
 Then, click on the option **Ready for Assessment**, available on the Actions button.
-<img width="800" alt="image" src="./assets/Risk02.png">
+<img width="800" alt="Then, click on the option Ready for Assessment, available on the Actions button." src="./assets/Risk02.png">
 
 ---
 
-### 3️⃣ Decide if a Risk Assessment is Required
+### 3. Decide if a Risk Assessment is Required
 
 | If...                   | Then...                                         |
 | ----------------------- | ----------------------------------------------- |
 | Assessment is required  | Proceed to fill in the Risk Assessment section. |
 | No assessment is needed | Move directly to setting the risk status.       |
 
-<img width="800" alt="image" src="./assets/Risk6.png">
+<img width="800" alt="Decide if a Risk Assessment is required, or move directly to setting the risk status." src="./assets/Risk6.png">
 
 ---
 
-### 4️⃣ Perform Risk Assessment
+### 4. Perform Risk Assessment
 
 * Open the risk record.
  
@@ -86,7 +86,7 @@ Then, click on the option **Ready for Assessment**, available on the Actions but
 
 
 * Save and click on **Asssement Complete**:
-<img width="800" alt="image" src="./assets/Risk_assessment_complete.png">
+<img width="800" alt="Save and click on Asssement Complete:" src="./assets/Risk_assessment_complete.png">
 
 * Choose **Continue and close tab**
 ---
@@ -96,12 +96,12 @@ Then, click on the option **Ready for Assessment**, available on the Actions but
 
 ---
 
-### 5️⃣ Save and Complete the Task
+### 5. Save and Complete the Task
 
 
 * After completing all risk review. Go to actions and click **Submit for Stakeholder Review** to progress the workflow to the Stakeholder stage.
 
-<img width="800" alt="image" src="./assets/usecase_submit_for_stakeholder_review.png">
+<img width="800" alt="After completing all risk review. Go to actions and click Submit for Stakeholder Review to progress the..." src="./assets/usecase_submit_for_stakeholder_review.png">
 
 
 ####  Process Several Risks - Bulk Operation
@@ -110,52 +110,52 @@ Nota:
 Please proceed with the following procedure If the message is displayed when submitting the case for stakeholder review. : "All associated risks should be assessed (marked as "Approved" or "Not Applicable") before submitting this use case for stakeholder review."
 
 * Click on the Launch Grid Page section
-<img width="800" alt="image" src="./assets/risk-bulk-operation-1.png">
+<img width="800" alt="Click on the Launch Grid Page section" src="./assets/risk-bulk-operation-1.png">
 
 * Select all the risk with status "Awaiting Assessment", then click on "Bulk update"
-<img width="800" alt="image" src="./assets/risk-bulk-operation-2.png">
+<img width="800" alt="Select all the risk with status "Awaiting Assessment", then click on "Bulk update"" src="./assets/risk-bulk-operation-2.png">
 
 * Select field "Status", then click on "Not Applicable". Then, click on the button "Update"
-<img width="400" alt="image" src="./assets/risk-bulk-operation-3.png">
+<img width="400" alt="Select field "Status", then click on "Not Applicable". Then, click on the button "Update"" src="./assets/risk-bulk-operation-3.png">
 
 * Close the confirmation window
-<img width="800" alt="image" src="./assets/risk-bulk-operation-4.png">
+<img width="800" alt="Close the confirmation window" src="./assets/risk-bulk-operation-4.png">
 
 * Close the risk window tab.
-<img width="800" alt="image" src="./assets/risk-bulk-operation-5.png">
+<img width="800" alt="Close the risk window tab." src="./assets/risk-bulk-operation-5.png">
 
 * Re-Open the Case. Go to actions and click **Submit for Stakeholder Review** to progress the workflow to the Stakeholder stage.
 
-<img width="800" alt="image" src="./assets/usecase_submit_for_stakeholder_review.png">
+<img width="800" alt="Re-Open the Case. Go to actions and click Submit for Stakeholder Review to progress the workflow to the..." src="./assets/usecase_submit_for_stakeholder_review.png">
 
 
 
 ---
 
-## 📋 Stakeholder Approval
+## Stakeholder Approval
 
 Your Use Case has now been submitted for stakeholder review and approval. The Use Case is in the hands of the designated stakeholders and is in the Stakeholder stage of the Use Case Request workflow.
 
 Before it can be moved to Approved for Development, the stakeholders must review the Use Case and either approve it or mark it as Not Applicable. 
 The actual Use Case reviews (there is one review by stakeholder) are found in the Use Case Approvals section of the Use Case record.
-<img width="800" alt="image" src="./assets/UseCaseReview1.png">
+<img width="800" alt="The actual Use Case reviews (there is one review by stakeholder) are found in the Use Case Approvals section..." src="./assets/UseCaseReview1.png">
 
 Click on the Use Case Review record to open it.
 
 The Use Case Review record will follow a simple Use Case Stakeholder Review workflow as configured in the system:
 
-<img width="800" alt="image" src="./assets/UseCaseReviewWorkflow.png">
+<img width="800" alt="The Use Case Review record will follow a simple Use Case Stakeholder Review workflow as configured in the..." src="./assets/UseCaseReviewWorkflow.png">
 
 Before you can approve the Use Case, you may need to fill in some of the Use Case Review details:
 - Stakeholder Name
 - Stakeholder Comments
 - Risk Rating
 
-<img width="800" alt="image" src="./assets/UseCaseReview2.png">
+<img width="800" alt="Risk Rating" src="./assets/UseCaseReview2.png">
 
 Once this information provided, you save and then click on the **Approve Use Case** button in the Actions menu.
 
-<img width="800" alt="image" src="./assets/UseCaseReview3.png">
+<img width="800" alt="Once this information provided, you save and then click on the Approve Use Case button in the Actions menu." src="./assets/UseCaseReview3.png">
 
 Clock on **Continue and close tab** in the popup window and go back to your Use Case Record.
 
@@ -163,7 +163,7 @@ Ensure that all stakeholders have approved the Use Case.
 
 ---
 
-## 🎉 Well Done!
+## Well Done!
 
 By completing the **Risk Review**, you help ensure:
 

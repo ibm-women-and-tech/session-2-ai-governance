@@ -24,7 +24,7 @@ To push metric values to OpenPages programmatically, you will find an example [n
    - `WX_API_KEY`: IBM Cloud API Key
    - `OP_URL`: OpenPages API Base URL
    
-   See [API Key Setup Instructions](../../instructor/api_key_setup.md) for details.
+   See API Key Setup Instructions for details.
 
 2. **Update the Model Name:** Modify the notebook to use your Model Name.
 

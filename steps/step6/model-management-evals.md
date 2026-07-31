@@ -45,8 +45,8 @@ At this stage, your AI System (in this example, a simple Chatbot) is live and us
 ## Next Steps: Incident Management
 
 Congratulations! You have successfully:
-- ✓ Analyzed a detected issue
-- ✓ Drilled down to the transaction level to identify root causes
+- Analyzed a detected issue
+- Drilled down to the transaction level to identify root causes
 
 **Important Note:** While you can perform this analysis, your primary role as an AI System Deployer is to set up and maintain monitoring. Once monitoring is operational, alerts like the one above are automatically surfaced as Issues in the Governance Console, and the GRC team is notified.
 

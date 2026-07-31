@@ -1,36 +1,36 @@
-# 👨‍🔬 AIOps Engineer – Deploy and Track Model in Production
-> ⚠️ **Note:** Log in with the **AIOps Engineer** or **AI Engineer** role before accessing deployment tools.
+# AIOps Engineer – Deploy and Track Model in Production
+> **Note:** Log in with the **AIOps Engineer** or **AI Engineer** role before accessing deployment tools.
 ---
 
-# 🔑 Accessing Project Deployment Tools
+# Accessing Project Deployment Tools
 
 1. Log in to **IBM Cloud**.
    
 
-<img width="800" alt="image" src="./assets/Model02.png">
+<img width="800" alt="Log in to IBM Cloud." src="./assets/Model02.png">
 
  
-2. From the **Hamburger Menu (☰)**, navigate to **Projects**.
+2. From the **Hamburger Menu**, navigate to **Projects**.
 
 
-<img width="800" alt="image" src="./assets/Model20.png">
+<img width="800" alt="From the Hamburger Menu, navigate to Projects." src="./assets/Model20.png">
 
 
 3. Click **View All Projects**.
    
 
-<img width="800" alt="image" src="./assets/Model22.png">
+<img width="800" alt="Click View All Projects." src="./assets/Model22.png">
 
 
 4. Select **Development Project**.  
 
 
-<img width="800" alt="image" src="./assets/Model23.png">
+<img width="800" alt="Select Development Project." src="./assets/Model23.png">
 
 
 ---
 
-# 🎯 Deployment Responsabilities
+# Deployment Responsabilities
 
 As a **Model Deployer**, your primary responsibilities include:
 
@@ -50,14 +50,14 @@ As a **Model Deployer**, your primary responsibilities include:
 
 ---
 
-# 🔍 Deployment Steps
+# Deployment Steps
 
-## 1️⃣ Promote Asset to Deployment Space
+## 1. Promote Asset to Deployment Space
 
 1. Navigate to **Assets** → **Asset Types** → **Prompts** -> Locate **Agentic RAG Detached Prompt**.
 
    
-<img width="800" alt="image" src="./assets/Model24.png">
+<img width="800" alt="Navigate to Assets → Asset Types → Prompts -> Locate Agentic RAG Detached Prompt." src="./assets/Model24.png">
 
 
   
@@ -68,71 +68,71 @@ As a **Model Deployer**, your primary responsibilities include:
 
 
      
-3. Choose the **space you created initially** or you can create new space as **Production** deployment stage. - [Steps for creating Deployment Space](../../Instructor/deploy-project.md)
+3. Choose the **space you created initially** or you can create new space as **Production** deployment stage.
    
 
-<img width="800" alt="image" src="./assets/Model28.png">
+<img width="800" alt="Choose the space you created initially or you can create new space as Production deployment stage." src="./assets/Model28.png">
 
 
-<img width="800" alt="image" src="./assets/Model29.png">
+<img width="800" alt="Choose the space you created initially or you can create new space as Production deployment stage." src="./assets/Model29.png">
 
    
 4. Click **Promote**.
 
    
-<img width="800" alt="image" src="./assets/Model30.png">
+<img width="800" alt="Click Promote." src="./assets/Model30.png">
 
     
 5. Confirm the asset is now **promoted to the deployment space**.
    
 
-<img width="800" alt="image" src="./assets/Model31.png">  
+<img width="800" alt="Confirm the asset is now promoted to the deployment space." src="./assets/Model31.png">  
 
 
 ---
 
-## 2️⃣ Deploy Asset
+## 2. Deploy Asset
 
 1. In the deployment space, click the **3-dot menu** on the promoted asset → select **Deploy**.
 
 
-<img width="800" alt="image" src="./assets/Model32.png">  
+<img width="800" alt="In the deployment space, click the 3-dot menu on the promoted asset → select Deploy." src="./assets/Model32.png">  
 
 
 2. Enter a **name** for the deployment, optionally, add a **description** and Click **Deploy**.
 
 
-<img width="800" alt="image" src="./assets/Model34.png">  
-<!-- <img width="800" alt="image" src="./assets/deploy-model-create-deployment.png"> -->
+<img width="800" alt="Enter a name for the deployment, optionally, add a description and Click Deploy." src="./assets/Model34.png">  
+<!-- <img width="800" alt="Enter a name for the deployment, optionally, add a description and Click Deploy." src="./assets/deploy-model-create-deployment.png"> -->
 
  
 3. Click on Create.Your **Agentic RAG asset** is now **running in production**.
 
 
-<img width="800" alt="image" src="./assets/Model35.png">  
+<img width="800" alt="Click on Create.Your Agentic RAG asset is now running in production." src="./assets/Model35.png">  
   
 
 
 ---
 
-## 3️⃣ Track Deployment On the Use Case
+## 3. Track Deployment On the Use Case
 
 1. Click the **AI Factsheet** next to the **Deployment** tab.
    
 
-<img width="800" alt="image" src="./assets/Model35.png">  
+<img width="800" alt="Click the AI Factsheet next to the Deployment tab." src="./assets/Model35.png">  
 
 
 2. Review **asset metadata**, **performance**, and **compliance information**.
     
 
-<img width="800" alt="image" src="./assets/Model36.png"> 
+<img width="800" alt="Review asset metadata, performance, and compliance information." src="./assets/Model36.png"> 
 
 
 3. Click **Track in AI Use Case** to monitor the deployed AI in context.
      
 
-<img width="800" alt="image" src="./assets/Model37.png"> 
+<img width="800" alt="Click Track in AI Use Case to monitor the deployed AI in context." src="./assets/Model37.png"> 
 
 
 3a. Associate the Production Deployment Space with the Use Case. In order to enable tracking the Production Deployment Space must be referenced at the Use Case level
@@ -147,7 +147,7 @@ As a **Model Deployer**, your primary responsibilities include:
 
 3.f Go back to the **Agentic RAG** Factsheet and click Refresh, and attempt to Track your Deployment once again:
 
-<img width="800" alt="image" src="./assets/Model37.png"> 
+<img width="800" alt="3.f Go back to the Agentic RAG Factsheet and click Refresh, and attempt to Track your Deployment once again:" src="./assets/Model37.png"> 
 
 
 2. Select **AI Use case** created by **Use case owner** initially :
@@ -157,7 +157,7 @@ As a **Model Deployer**, your primary responsibilities include:
 
 4. On the FactSheet Tab, click on Track Deployment.
 
-## 4️⃣ Setup the Monitoring
+## 4. Setup the Monitoring
 
 1. Go back to the **Deployments** tab .
 
@@ -189,7 +189,7 @@ As a **Model Deployer**, your primary responsibilities include:
 
 ---
 
-## 5️⃣ Simulate Live Inference
+## 5. Simulate Live Inference
 
 At this stage your AI System (Here a simple Chatbot) is live, and users in your organization are starting to use. You will simulate incoming traffic and generate some issue with the metrics.
 
@@ -244,7 +244,7 @@ That means, you don't have to seat all day in front to the Model Management dash
 
 ---
 
-# ✅ Summary
+# Summary
 
 Following these steps ensures:
 
@@ -270,7 +270,7 @@ Following these steps ensures:
 
 ---
 
-# 🎉 Congratulations!
+# Congratulations!
 
 By deploying and tracking your **Agentic RAG prompt**, you ensure **reliable, compliant, and production-ready AI services** for HR process automation!
 

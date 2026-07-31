@@ -3,10 +3,27 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 const base = import.meta.env.BASE_URL;
 
+const fixes = [
+  "Track every AI model from start to finish",
+  "Make sure models follow the rules (GDPR, EU AI Act, etc.)",
+  "Foster collaboration with the development team — without slowing them down",
+  "Catch problems early and fix them fast",
+  "Keep everything ready for audits",
+];
+
+const journey = [
+  { number: "01", title: "Inception", desc: "Create a new model use case request and complete initial risk and compliance assessments.", owner: "Model Owner, Business Owner, Data Engineer" },
+  { number: "02", title: "Stakeholder Review", desc: "Review risk level and compliance applicability; approve or reject the use case.", owner: "Business Unit Leader, Head of Risk, Compliance Officer" },
+  { number: "03", title: "Model Development", desc: "Build and test the AI model; evaluate performance of different models.", owner: "AI Engineer, Data Engineer, Data Scientist" },
+  { number: "04", title: "Model Validation & Approval", desc: "Review the model, perform an ethics assessment, and approve it for production.", owner: "Head of AI, Head of Risk" },
+  { number: "05", title: "Deploy, Manage, Monitor & Report", desc: "Deploy the approved AI use case/model and automate performance and risk monitoring.", owner: "Head of IT, MLOps Engineer" },
+  { number: "06", title: "Incident Management", desc: "Take remediation actions to mitigate risks and update stakeholders after remediation.", owner: "Model Owner, Business Owner, Data Scientist" },
+];
+
 const personas = [
   { icon: "👤", role: "Use Case Owner", desc: "Defines the AI use case and submits risks for assessment." },
   { icon: "🛡️", role: "Risk & Compliance Officer", desc: "Reviews, assesses and endorses risk. Manages production incidents." },
-  { icon: "👨‍💻", role: "Model Developer", desc: "Builds and evaluates prompts and agents in Prompt Lab & Agent Lab." },
+  { icon: "👩‍💻", role: "Model Developer", desc: "Builds and evaluates prompts and agents in Prompt Lab & Agent Lab." },
   { icon: "🔍", role: "Model Validator", desc: "Validates model performance, hallucination metrics and governance readiness." },
   { icon: "⚙️", role: "AIOps Engineer", desc: "Deploys and monitors the AI model on watsonx.governance." },
 ];
@@ -83,6 +100,23 @@ const steps = [
 
   <div class="max-w-5xl mx-auto px-8 py-14 space-y-16">
 
+    <!-- What Jose wanted to fix -->
+    <div>
+      <p class="text-xs font-semibold tracking-widest uppercase text-violet-500 mb-2">The Goal</p>
+      <h2 class="text-xl font-bold text-gray-900 mb-2">What Jose wanted to fix</h2>
+      <p class="text-sm text-gray-500 max-w-2xl leading-relaxed mb-6">
+        Jose didn't want to manage critical governance processes through spreadsheets, emails, or Slack messages — he wanted one simple system for it all.
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        {fixes.map((f) => (
+          <div class="flex items-start gap-2.5 rounded-xl bg-violet-50 border border-violet-100 px-4 py-3">
+            <span class="text-violet-500 mt-0.5 shrink-0">✅</span>
+            <span class="text-sm text-gray-700 leading-relaxed">{f}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
     <!-- Prerequisites -->
     <div class="border border-violet-200 bg-violet-50 rounded-2xl p-7">
       <p class="text-xs font-semibold tracking-widest uppercase text-violet-500 mb-2">Before you start</p>
@@ -92,6 +126,9 @@ const steps = [
         <li class="flex gap-2"><span class="text-violet-400 font-bold mt-0.5">·</span> IBM Cloud login with assigned stakeholder role</li>
         <li class="flex gap-2"><span class="text-violet-400 font-bold mt-0.5">·</span> Services: OpenPages with MRG (Main Labs), Model Management (Additional Labs)</li>
       </ul>
+      <p class="mt-4 text-xs text-gray-500 leading-relaxed border-t border-violet-200 pt-4">
+        💡 In this lab you'll work through a real AI Governance use case with your team, each member taking on one of the personas below. For simplicity, every profile is granted privileges to run any persona's steps, through the <strong>watsonx-governance MRG Master</strong> profile.
+      </p>
     </div>
 
     <!-- Personas -->
@@ -111,9 +148,36 @@ const steps = [
       </div>
     </div>
 
-    <!-- Lab Guides -->
+    <!-- AI Governance Journey -->
     <div>
       <p class="text-xs font-semibold tracking-widest uppercase text-violet-500 mb-2">The Journey</p>
+      <h2 class="text-xl font-bold text-gray-900 mb-2">The AI Governance journey in 6 steps</h2>
+      <p class="text-sm text-gray-500 max-w-2xl leading-relaxed mb-8">
+        A simple, structured process for managing AI models from idea to remediation — the same one Jose's team uses today.
+      </p>
+
+      <div class="rounded-2xl border border-gray-200 overflow-hidden">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 divide-y sm:divide-y-0 lg:divide-x divide-gray-100">
+          {journey.map((j) => (
+            <div class="p-5 bg-gray-50">
+              <span class="inline-flex items-center justify-center w-6 h-6 rounded-md bg-violet-100 border border-violet-200 text-violet-700 text-[11px] font-bold mb-3">
+                {j.number}
+              </span>
+              <p class="text-sm font-semibold text-gray-900 leading-snug">{j.title}</p>
+              <p class="text-xs text-gray-500 mt-1.5 leading-relaxed">{j.desc}</p>
+              <p class="text-[11px] text-violet-500 font-medium mt-3 leading-snug">Owner: {j.owner}</p>
+            </div>
+          ))}
+        </div>
+        <div class="bg-violet-600 text-white text-center text-xs font-semibold tracking-wide uppercase py-2.5">
+          Continuous AI Governance
+        </div>
+      </div>
+    </div>
+
+    <!-- Lab Guides -->
+    <div>
+      <p class="text-xs font-semibold tracking-widest uppercase text-violet-500 mb-2">The Guides</p>
       <h2 class="text-xl font-bold text-gray-900 mb-8">Lab guides directory</h2>
 
       <div class="space-y-4">
@@ -141,13 +205,36 @@ const steps = [
       </div>
     </div>
 
-    <!-- Closing quote -->
-    <blockquote class="border-l-4 border-violet-300 bg-violet-50 rounded-r-2xl px-6 py-5">
-      <p class="text-sm text-violet-800 italic leading-relaxed">
-        "Before watsonx.governance, we had no clear process. Now everyone knows what to do, models are better, and we're always ready for audits."
+    <!-- What Jose says now -->
+    <div>
+      <p class="text-xs font-semibold tracking-widest uppercase text-violet-500 mb-2">The Result</p>
+      <h2 class="text-xl font-bold text-gray-900 mb-2">What Jose says now</h2>
+      <p class="text-sm text-gray-500 max-w-2xl leading-relaxed mb-6">
+        With watsonx.governance in place, Jose's team finally has one clear process from intake to remediation — every model is tracked, every risk assessed, and audits are no longer a scramble.
       </p>
-      <footer class="mt-2 text-xs text-violet-500 font-semibold">— Jose, Chief Risk Officer, TechCorp Inc.</footer>
-    </blockquote>
+      <blockquote class="relative border-l-4 border-violet-400 bg-violet-50 rounded-r-2xl px-8 py-7 overflow-hidden">
+        <span class="pointer-events-none absolute -top-4 -left-1 text-7xl font-serif text-violet-200 select-none">&ldquo;</span>
+        <p class="relative text-base text-violet-900 italic leading-relaxed max-w-2xl">
+          Before watsonx.governance, we had no clear process. Now everyone knows what to do, models are better, and we're always ready for audits.
+        </p>
+        <footer class="relative mt-3 text-xs text-violet-500 font-semibold">— Jose, Chief Risk Officer, TechCorp Inc.</footer>
+      </blockquote>
+    </div>
+
+    <!-- Congratulations / wrap-up -->
+    <div class="border border-gray-200 rounded-2xl p-7">
+      <p class="text-xs font-semibold tracking-widest uppercase text-violet-500 mb-2">🎉 By the end of this lab</p>
+      <h2 class="text-base font-semibold text-gray-900 mb-4">You'll have helped govern this Agentic AI use case by</h2>
+      <ul class="text-sm text-gray-600 space-y-2 mb-5">
+        <li class="flex gap-2"><span class="text-violet-400 font-bold mt-0.5">·</span> Validating risk levels</li>
+        <li class="flex gap-2"><span class="text-violet-400 font-bold mt-0.5">·</span> Confirming regulatory and internal compliance</li>
+        <li class="flex gap-2"><span class="text-violet-400 font-bold mt-0.5">·</span> Approving only well-governed use cases</li>
+        <li class="flex gap-2"><span class="text-violet-400 font-bold mt-0.5">·</span> Ensuring model fairness and quality through continuous validation</li>
+      </ul>
+      <p class="text-xs text-gray-500 leading-relaxed border-t border-gray-100 pt-4">
+        🛡️ Governance is not a one-time check — it's a continuous loop of accountability and alignment.
+      </p>
+    </div>
 
   </div>
 

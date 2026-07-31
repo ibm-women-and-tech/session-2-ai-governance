@@ -1,13 +1,13 @@
-# 🧑‍🔬 Model Validator – Agentic RAG Performance & Quality Validation
+# Model Validator – Agentic RAG Performance & Quality Validation
 
-> ⚠️ **Note:** Log in with the **Model Validator** role before accessing validation tools.
+> **Note:** Log in with the **Model Validator** role before accessing validation tools.
 
 ---
 
-## 🔑 Accessing watsonx.governance ModelManagement Validation Tools
+## Accessing watsonx.governance ModelManagement Validation Tools
 
 1. Log in to IBM Cloud.
-2. From the **Hamburger Menu (☰)**, navigate to **Resource list**.
+2. From the **Hamburger Menu**, navigate to **Resource list**.
 3. Type **gov** in the filter by name search bar 
 4. Select **gov-xxxxxxxxxxxxx**.
    ![image](https://github.ibm.com/user-attachments/assets/f8209714-7cb9-409f-9404-c308ffc13d89)
@@ -25,7 +25,7 @@
 
 ---
 
-## 🎯 Validation Responsibilities
+## Validation Responsibilities
 
 As a Model Validator, your primary role is to ensure **Agentic RAG** meet performance, fairness, and quality standards, focusing on:
 
@@ -49,7 +49,7 @@ As a Model Validator, your primary role is to ensure **Agentic RAG** meet perfor
 
 ---
 
-## 🔍 Validation Areas
+## Validation Areas
 
 ### Fairness Validation
 
@@ -82,7 +82,7 @@ Follow the link depending on your region:
 - Frankfurt: [https://eu-de.aiopenscale.cloud.ibm.com](https://eu-de.aiopenscale.cloud.ibm.com/)
 
 Locate your project and click on it:
-<img width="800" alt="image" src="./assets/valid_technical_launch_evaluation.png">
+<img width="800" alt="Locate your project and click on it:" src="./assets/valid_technical_launch_evaluation.png">
 
 ### Detached RAG prompt Performance Evaluation Using Test Data
 
@@ -92,7 +92,7 @@ You are going to perform a more complete evaluation using a larger test dataset 
 1. In the OpenScale dashboard, click **Actions** > **Evaluate Now**.
 
    
-<img width="800" alt="image" src="./assets/valid_technical_dashboard.png">
+<img width="800" alt="In the OpenScale dashboard, click Actions > Evaluate Now." src="./assets/valid_technical_dashboard.png">
 
 
 2. Upload this [dataset](./assets/hr_queries_with_ground_truth.csv) that includes input features and expected output (ground truth).
@@ -101,23 +101,23 @@ You are going to perform a more complete evaluation using a larger test dataset 
    * File constraints: Max size 8 MB, min 10 records, max 1000 records.
 
   
-<img width="800" alt="image" src="./assets/Valid1.png"> 
+<img width="800" alt="File constraints: Max size 8 MB, min 10 records, max 1000 records." src="./assets/Valid1.png"> 
 
 
 3. Map all required fields from your uploaded csv.Click **Upload and Evaluate**.
 
 
-. <img width="800" alt="image" src="./assets/Valid2.png"> 
+. <img width="800" alt="Map all required fields from your uploaded csv.Click Upload and Evaluate." src="./assets/Valid2.png"> 
 
 
 4. Wait for evaluation to complete and review the results for accuracy and other metrics.
 
    
-<img width="800" alt="image" src="./assets/Valid_all_green.png"> 
+<img width="800" alt="Wait for evaluation to complete and review the results for accuracy and other metrics." src="./assets/Valid_all_green.png"> 
 
 ---
 
-## ✅ Summary
+## Summary
 
 Your validation work helps ensure that **Agentic RAG prompts**:
 
@@ -129,7 +129,7 @@ Your validation work helps ensure that **Agentic RAG prompts**:
 
 ---
 
-## 🎉 Great Job!
+## Great Job!
 
 By performing thorough validation, including test data evaluation, you support trustworthy, transparent, and ethical AI deployments!
 
