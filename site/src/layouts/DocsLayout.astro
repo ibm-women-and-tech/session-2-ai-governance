@@ -1,0 +1,233 @@
+---
+import '../styles/global.css';
+
+interface Heading {
+  depth: number;
+  slug: string;
+  text: string;
+}
+
+interface Props {
+  title: string;
+  description?: string;
+  currentPath?: string;
+  headings?: Heading[];
+}
+
+const { title, description, currentPath = '', headings = [] } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const minHeadingDepth = headings.length ? Math.min(...headings.map((h) => h.depth)) : 0;
+
+const steps = [
+  {
+    number: "01",
+    label: "Use Case Creation",
+    instructor: false,
+    items: [
+      { label: "Use Case Creation", href: `${base}/steps/1-use-case-creation/usecase-creation-model-owner` },
+      { label: "Risk Review", href: `${base}/steps/1-use-case-creation/risk-review-rco` },
+    ],
+  },
+  {
+    number: "02",
+    label: "Risk & Compliance Review",
+    instructor: false,
+    items: [
+      { label: "Risk Endorsement", href: `${base}/steps/2-risk-compliance-review/risk-endorsement-bul` },
+    ],
+  },
+  {
+    number: "03",
+    label: "AI Lifecycle",
+    instructor: true,
+    items: [
+      { label: "AI Lifecycle Walkthrough", href: `${base}/steps/3-ai-lifecycle/ai-lifecycle-walkthrough` },
+    ],
+    appendix: [
+      { label: "3a · Developer Tasks", href: `${base}/steps/3-ai-lifecycle/appendix/developer/model-developer-tasks` },
+      { label: "3a · Model Development", href: `${base}/steps/3-ai-lifecycle/appendix/developer/model-developement` },
+      { label: "3b · Validator Tasks", href: `${base}/steps/3-ai-lifecycle/appendix/validator/model-validator-tasks` },
+      { label: "3b · Model Validation", href: `${base}/steps/3-ai-lifecycle/appendix/validator/model-validation` },
+      { label: "3c · Deployer Tasks", href: `${base}/steps/3-ai-lifecycle/appendix/deployer/model-deployer-tasks` },
+      { label: "3c · Model Deployment", href: `${base}/steps/3-ai-lifecycle/appendix/deployer/model-deployment` },
+    ],
+  },
+  {
+    number: "04",
+    label: "Incident Management",
+    instructor: false,
+    items: [
+      { label: "Incident Management", href: `${base}/steps/4-incident-management/mitigating-incidents` },
+    ],
+  },
+];
+
+// Derive which step number is active for the progress bar
+const activeStepIndex = steps.findIndex(g => g.items.some(i => i.href === currentPath));
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {description && <meta name="description" content={description} />}
+    <title>{title} — AI Risk & Compliance</title>
+    <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
+  </head>
+  <body class="bg-white text-gray-900 min-h-screen flex flex-col">
+
+    <!-- Top nav -->
+    <header class="border-b border-gray-100">
+      <div class="max-w-[90rem] mx-auto px-6 py-3 flex items-center justify-between">
+        <div class="flex items-center gap-3 text-sm">
+          <button
+            id="mobile-nav-toggle"
+            type="button"
+            aria-label="Toggle step navigation"
+            aria-expanded="false"
+            aria-controls="sidebar-nav"
+            class="md:hidden flex items-center justify-center w-8 h-8 -ml-1 rounded-lg text-gray-500 hover:bg-gray-50 hover:text-violet-600">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+          <a href="https://ibm-women-and-tech.github.io" class="text-violet-600 hover:underline font-medium">IBM Women and Tech</a>
+          <span class="text-gray-300">/</span>
+          <a href={base} class="text-gray-500 hover:text-violet-600 transition-colors">Session 2</a>
+        </div>
+        <p class="hidden sm:block text-xs tracking-widest uppercase text-gray-400">AI Risk &amp; Compliance</p>
+      </div>
+      <!-- Step progress bar (4 segments) -->
+      <div class="flex h-0.5 bg-gray-100">
+        {steps.map((_, i) => (
+          <div class={`flex-1 transition-colors ${i <= activeStepIndex ? 'bg-violet-500' : 'bg-gray-100'}`}></div>
+        ))}
+      </div>
+    </header>
+
+    <div class="flex flex-1 max-w-[90rem] mx-auto w-full">
+
+      <!-- Sidebar -->
+      <nav id="sidebar-nav" class="hidden md:flex flex-col w-64 shrink-0 border-r border-gray-100 py-8 px-4 overflow-y-auto gap-1">
+        <div class="flex items-center justify-between mb-2 md:hidden px-2">
+          <span class="text-xs font-bold uppercase tracking-wider text-gray-400">Navigate</span>
+          <button
+            id="mobile-nav-close"
+            type="button"
+            aria-label="Close step navigation"
+            class="flex items-center justify-center w-8 h-8 rounded-lg text-gray-500 hover:bg-gray-50 hover:text-violet-600">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <a href={base}
+          class="flex items-center gap-2 text-sm font-semibold text-gray-900 hover:text-violet-600 mb-5 px-2 transition-colors">
+          ← Lab Overview
+        </a>
+
+        {steps.map((group) => (
+          <div class="mb-4">
+            <!-- Step badge + label -->
+            <div class="flex items-center gap-2 px-2 mb-1.5">
+              <span class={`flex items-center justify-center w-6 h-6 rounded-lg border text-xs font-bold shrink-0 ${group.instructor ? 'bg-violet-100 border-violet-300 text-violet-700' : 'bg-violet-50 border-violet-200 text-violet-600'}`}>
+                {group.number}
+              </span>
+              <p class="text-xs font-bold uppercase tracking-wider text-gray-400 leading-none">{group.label}</p>
+              {group.instructor && <span class="text-[9px] font-semibold uppercase tracking-wide text-violet-400 leading-none">demo</span>}
+            </div>
+            <ul class="space-y-0.5 pl-2">
+              {group.items.map((item) => {
+                const isActive = currentPath === item.href;
+                return (
+                  <li>
+                    <a
+                      href={item.href}
+                      class={`block rounded-lg px-3 py-1.5 text-sm transition-colors ${
+                        isActive
+                          ? 'bg-violet-50 text-violet-700 font-semibold border border-violet-200'
+                          : 'text-gray-500 hover:bg-gray-50 hover:text-gray-900'
+                      }`}
+                    >
+                      {item.label}
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+            {group.appendix && (
+              <div class="mt-1 pl-2">
+                <p class="px-3 pt-1 pb-0.5 text-[10px] font-semibold uppercase tracking-wider text-gray-300">Appendix</p>
+                <ul class="space-y-0.5">
+                  {group.appendix.map((item) => {
+                    const isActive = currentPath === item.href;
+                    return (
+                      <li>
+                        <a
+                          href={item.href}
+                          class={`block rounded-lg px-3 py-1 text-xs transition-colors ${
+                            isActive
+                              ? 'bg-violet-50 text-violet-600 font-semibold border border-violet-200'
+                              : 'text-gray-400 hover:bg-gray-50 hover:text-gray-600'
+                          }`}
+                        >
+                          {item.label}
+                        </a>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            )}
+          </div>
+        ))}
+      </nav>
+
+      <!-- Content -->
+      <main class="flex-1 min-w-0 py-10 px-8 lg:px-12">
+        <slot />
+      </main>
+
+      {headings.length > 0 && (
+        <aside class="hidden xl:block w-72 shrink-0 py-10 pr-8">
+          <div class="sticky top-6">
+            <p class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-3 px-2">On this page</p>
+            <ul class="space-y-1 text-sm border-l border-gray-100">
+              {headings.map((h) => (
+                <li style={{ paddingLeft: `${0.5 + (h.depth - minHeadingDepth) * 0.5}rem` }}>
+                  <a
+                    href={`#${h.slug}`}
+                    class="block -ml-px border-l-2 border-transparent py-0.5 pl-3 leading-snug text-gray-500 hover:text-violet-600 hover:border-violet-300 transition-colors">
+                    {h.text}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </aside>
+      )}
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-100">
+      <div class="max-w-[90rem] mx-auto px-6 py-5 flex items-center justify-between text-xs text-gray-400">
+        <span>Women &amp; Tech Event Series &nbsp;·&nbsp; IBM Innovation Studio</span>
+        <span>built with <a href="https://astro.build" class="hover:underline">Astro</a></span>
+      </div>
+    </footer>
+
+    <!-- Image zoom lightbox -->
+    <div id="img-lightbox">
+      <button id="img-lightbox-close" type="button" aria-label="Close zoomed image">&times;</button>
+      <img id="img-lightbox-img" src="" alt="" />
+    </div>
+
+  </body>
+</html>
+
+<script>
+  import { initDocsUI } from '../scripts/docs-ui';
+  initDocsUI();
+</script>

@@ -1,0 +1,112 @@
+---
+import { getCollection, render } from 'astro:content';
+import DocsLayout from '../../../layouts/DocsLayout.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('steps');
+  return entries.map((entry) => {
+    const parts = entry.id.split('/');
+    // entry.id: "1-use-case-creation/usecase-creation-model-owner"
+    // or nested: "3-ai-lifecycle/appendix/developer/model-developer-tasks"
+    // [step] captures the first segment; [...slug] captures the rest as a string
+    const step = parts[0];
+    const slug = parts.slice(1).join('/');
+    return {
+      params: { step, slug },
+      props: { entry },
+    };
+  });
+}
+
+const stepLabels: Record<string, string> = {
+  '1-use-case-creation':      'Use Case Creation',
+  '2-risk-compliance-review': 'Risk & Compliance Review',
+  '3-ai-lifecycle':           'AI Lifecycle',
+  '4-incident-management':    'Incident Management',
+};
+
+const stepNumbers: Record<string, string> = {
+  '1-use-case-creation':      '01',
+  '2-risk-compliance-review': '02',
+  '3-ai-lifecycle':           '03',
+  '4-incident-management':    '04',
+};
+
+const slugTitles: Record<string, string> = {
+  'usecase-creation-model-owner': 'Use Case Creation',
+  'risk-review-rco':              'Risk Review',
+  'risk-endorsement-bul':         'Risk Endorsement',
+  'ai-lifecycle-walkthrough':     'AI Lifecycle Walkthrough',
+  'model-developer-tasks':        'Developer Tasks',
+  'model-developement':           'Model Development',
+  'model-validator-tasks':        'Validator Tasks',
+  'model-validation':             'Model Validation',
+  'model-deployer-tasks':         'Deployer Tasks',
+  'model-deployment':             'Model Deployment',
+  'mitigating-incidents':         'Incident Management',
+  'model-management-evals':       'Model Management Evals',
+  'integrating-external-evals':   'Integrating External Evals',
+};
+
+const { entry } = Astro.props;
+const parts = entry.id.split('/');
+const step = parts[0];
+const slug = parts.slice(1).join('/');
+const base = import.meta.env.BASE_URL;
+const currentPath = `${base}/steps/${step}/${slug}`;
+
+// For page title use the last path segment
+const slugLeaf = parts[parts.length - 1];
+const pageTitle = slugTitles[slugLeaf] ?? slugLeaf;
+const stepLabel = stepLabels[step] ?? step;
+const stepNumber = stepNumbers[step] ?? '';
+
+const { Content, headings } = await render(entry);
+const tocHeadings = headings.slice(1);
+
+// stepBase is used to resolve relative asset paths in the markdown.
+// For nested files (appendix/developer/...) we need the full sub-path.
+const stepBase = `${base}/steps/${entry.id.split('/').slice(0, -1).join('/')}`;
+
+// Build a filename -> real route map so relative markdown links resolve correctly.
+const allSteps = await getCollection('steps');
+const routeMap: Record<string, string> = {};
+for (const e of allSteps) {
+  const eParts = e.id.split('/');
+  const eStep = eParts[0];
+  const eSlug = eParts.slice(1).join('/');
+  const eLeaf = eParts[eParts.length - 1];
+  routeMap[eLeaf] = `${base}/steps/${eStep}/${eSlug}`;
+}
+
+const contentLinksConfig = JSON.stringify({ siteBase: base, stepBase, routeMap });
+---
+
+<DocsLayout title={pageTitle} currentPath={currentPath} headings={tocHeadings}>
+  <!-- Page header -->
+  <div class="mb-8 pb-6 border-b border-gray-100">
+    <p class="text-xs font-semibold tracking-widest uppercase text-violet-500 mb-2">
+      Step {stepNumber} &nbsp;·&nbsp; {stepLabel}
+    </p>
+    <h1 class="text-3xl font-bold text-gray-900">{pageTitle}</h1>
+  </div>
+
+  <article
+    data-assets-base={stepBase}
+    class="prose prose-slate max-w-none
+      prose-headings:font-bold prose-headings:text-gray-900
+      prose-a:text-violet-600 prose-a:no-underline prose-a:hover:underline
+      prose-code:bg-gray-100 prose-code:px-1 prose-code:rounded prose-code:text-sm
+      prose-img:rounded-lg prose-img:border prose-img:border-gray-200 prose-img:shadow-sm
+      prose-blockquote:border-violet-300 prose-blockquote:bg-violet-50 prose-blockquote:rounded-r-lg
+      prose-table:text-sm">
+    <Content />
+  </article>
+
+  <script type="application/json" id="content-links-config" set:html={contentLinksConfig} />
+</DocsLayout>
+
+<script>
+  import { fixContentLinks } from '../../../scripts/content-links';
+  fixContentLinks();
+</script>

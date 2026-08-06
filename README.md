@@ -51,7 +51,7 @@ AI Governance is a teams sport involving different roles in an organization. Tho
 <img width="854" alt="personas" src="./assets/personas.png">
 
 
-## 🚀 The AI Governance Journey in 7 steps (Used by Jose’s Team)
+## 🚀 The AI Governance Journey in 4 steps (Used by Jose's Team)
 
 A simple, structured process for managing AI models from idea to remediation.
 
@@ -78,26 +78,19 @@ A simple, structured process for managing AI models from idea to remediation.
 ## ⚙️ Pre-requisites
 
 * Access credentials (provided by the instructor)
-* IBM Cloud login with assigned stakeholder role
-* Services: OpenPages with MRG (Main Labs), Model Management (Additional Labs).
-> [!Note]
-> If your team attending the bootcamp is unfamiliar with Model development/deployment, the instructor can fulfill the roles of Model developer/deployer, executing the required Model Management Labs.
+* IBM Cloud login with the **watsonx-governance MRG Master** profile
+* Services: OpenPages (all lab steps)
 
 ## ⚙️ Lab Guides directory
 
-Here are all the links for all the guides for each of the 6 steps of the AI Governance Journey:
-
-| Step | Persona | Hands-on lab <br> (on the MRG Console) | Additional labs (on the Model Management Studio) |
+| Step | Activity | Persona | Guide |
 |------|------|-------|---------------------|
-| 1 | Use Case Owner | [Use Case Creation](./steps/step1/usecase-creation-model-owner.md)  | - |
-| 2 | Risk & Compliance Officer | [Risk Review](./steps/step1/risk-review-rco.md), [Risk Endorsement](./steps/step2/risk-endorsement-bul.md) | - |
-| 3 | Model Developer | [Developer Tasks](./steps/step3/model-developer-tasks.md) | [Model Development](./steps/step3/model-developement.md) |
-| 4 | Model Validator | [Validator Tasks](./steps/step4/model-validator-tasks.md) | [Model Validation](./steps/step4/model-validation.md) |
-| 5 | AIOps Engineer | [Deployer & Monitoring Tasks](./steps/step5/model-deployer-tasks.md) | [Model Deployment](./steps/step5/model-deployment.md) |
-| 6 | Risk & Compliance Officer | [Incident Management](./steps/step6/mitigating-incidents.md) |  [Model Management Evals](./steps/step6/model-management-evals.md), [Integrating External Evals](./steps/step6/integrating-external-evals.md) |
+| 1 | **Use Case Creation** | Use Case Owner | [Use Case Creation](./lab/1-use-case-creation/usecase-creation-model-owner.md) |
+| 2 | **Risk & Compliance Review** | Risk & Compliance Officer | [Risk Review](./lab/1-use-case-creation/risk-review-rco.md), [Risk Endorsement](./lab/2-risk-compliance-review/risk-endorsement-bul.md) |
+| 3 | **AI Lifecycle** *(instructor-led)*<br>3a. Model Developer<br>3b. Model Validator<br>3c. AIOps Engineer | Instructor presents;<br>participants observe | [AI Lifecycle Walkthrough](./lab/3-ai-lifecycle/ai-lifecycle-walkthrough.md) |
+| 4 | **Incident Management** | Risk & Compliance Officer | [Incident Management](./lab/4-incident-management/mitigating-incidents.md) |
 
-At the end of each of the labs, you will find a [link](./guides-directory.md) to that lab's directory.
-You can also follow along this main guide to get you started. 
+At the end of each lab you will find a [link](./guides-directory.md) to the guide directory.
 
 ## 🚀 Getting Started
 
@@ -119,85 +112,77 @@ You can also follow along this main guide to get you started.
 
 
 
-## 👩‍💼 Step 1 - Use Case Owner Responsibilities
+## 👩‍💼 Step 1 — Use Case Creation
 
-As a Use Case Owner, your responsibilities include:
+As a **Use Case Owner**, your responsibilities include defining the AI use case and submitting
+it for risk assessment. Your table works through this step together.
 
-* Defining the use case (AskHR - Agentic AI)
-* Submitting associated risks for assessment  
+🔍 Follow this guide:
 
-🔍 Follow these guides:
+* [Creating and defining an AI use case](./lab/1-use-case-creation/usecase-creation-model-owner.md)
 
-* [Creating and defining an AI use case](./steps/step1/usecase-creation-model-owner.md)
-
-Once the guides above have been completed, the Use Case Owner would wait for steps 2-6 to be completed by other roles (development and deployment) up until an incident or issue is reported.
-In our scenario, one issue will arise once the model in in production.  
+💡 Don't forget to fill in the **Risk Level** and **Control Details** before submission.
 
 
-💡 Don’t forget to fill in the **Risk Level** and **Control Details** before submission.
+## 👤 Step 2 — Risk & Compliance Review
 
-
-## 👤 Step 2 - Risk & Compliance Officer Responsibilities
-
-As a Risk and Compliance Officer, you play a crucial role with the stakeholder endorsement. Your input ensures the use case aligns with business strategy and acceptable risk levels.
-
-But, prior to your endorsement, the Risk & Compliance Officer would have reviewed and assessed the risks associated with the use case.
+As a **Risk & Compliance Officer**, you review and endorse the risks associated with the Use
+Case. Your input ensures the Use Case aligns with business strategy and acceptable risk levels
+before development can begin.
 
 🗂️ Follow these guides:
 
-* [Reviewing and Assessing Risk](./steps/step1/risk-review-rco.md) 
-* [Stakeholder Risk Endorsement](./steps/step2/risk-endorsement-bul.md)
+* [Reviewing and Assessing Risk](./lab/1-use-case-creation/risk-review-rco.md)
+* [Stakeholder Risk Endorsement](./lab/2-risk-compliance-review/risk-endorsement-bul.md)
 
 
-## 👨‍💻 Step 3 - Model Developer Responsibilities
+## 🎬 Step 3 — AI Lifecycle Walkthrough *(Instructor-Led)*
 
-As a Model Developer, your responsibilities include creating and evaluating Prompts and Agents for generative AI use cases. You will build and test these artifacts in the Prompt Lab and Agent Lab. Upon creation, a Factsheet is automatically generated and linked to the AI Use Case in watsonx.governance.
+> **Participants observe. No hands-on action required during this step.**
 
-You are responsible for completing all required details in the factsheet and submitting it for governance approval.
+This step covers three roles and three sub-steps. The instructor will navigate a pre-prepared
+Use Case live on screen, showing the full journey from "Approved for Development" to
+"In Operation":
 
+- **3a. Model Developer** — builds and submits the AI system for validation
+- **3b. Model Validator** — independently validates quality and approves for production
+- **3c. AIOps Engineer** — deploys the model and confirms it in the governance console
 
-🗂️ Reference:
+🗂️ Follow along with the instructor using this guide:
 
-* [Model Developer Tasks and Guidelines](./steps/step3/model-developer-tasks.md)
-
-
-## 🔍 Step 4 - Model Validator Responsibilities
-
-As a **Model Validator**, you are responsible for validating the AI System development including  validating the AI model’s performance and hallucinations metrics. You will reviewing every aspect to ensure the AI System meets governance standards.
-
-🗂️ Reference:
-
-* [Model Validator Tasks and Guidelines](./steps/step4/model-validator-tasks.md)
-
-  
-## 🔍 Step 5 - AIOps Engineer Responsibilities
-
-As an **AIOps Engineer**, you are responsible for Deploying and Monitoring the AI use case/model on **IBM watsonx.governance**.
+* [AI Lifecycle Walkthrough](./lab/3-ai-lifecycle/ai-lifecycle-walkthrough.md)
 
 
-🗂️ For detailed steps, refer to:
+## 🔍 Step 4 — Incident Management
 
-* [Operations Team Tasks and Evaluation Guide](./steps/step5/model-deployer-tasks.md)
+As a **Risk & Compliance Officer**, you are responsible for reviewing and resolving incidents
+that arise when a live AI system has a performance issue. In this step, **each participant
+works their own pre-assigned Use Case independently.**
 
+Your instructor will share an assignment table at the start of this step — find your Use Case
+name and open the guide below.
 
-## 🔍 Step 6 - Risk & Compliance Officer Responsibilities
-
-As a **Risk & Compliance Officer**, you are also responsible for reviewing incidents and issues that may arise along the lifecyle of a model. In this scenario, an issue would arise while the model is in production. Your task is to review the issue and help mitigate it.
-
-* [Mitigating Incidents](./steps/step6/mitigating-incidents.md)
+* [Incident Management](./lab/4-incident-management/mitigating-incidents.md)
 
 --------
 
 ## 🎉 Congratulations!
 
-You've helped ensure this Agentic AI use case adheres to ethical AI practices by:
+You have completed the full AI governance lifecycle — from defining a Use Case and assessing
+its risks, to observing development and validation, to resolving a real production incident.
 
-* Validating risk levels
-* Confirming regulatory and internal compliance
-* Approving only well-governed use cases
-* Ensuring model fairness and quality through continuous validation
+* You traced an AI system from idea to production
+* You applied risk and compliance controls at every stage
+* You resolved a production incident with a full audit trail
 
-> 🛡️ Governance is not a one-time check — it’s a continuous loop of accountability and alignment.
+> 🛡️ Governance is not a one-time check — it's a continuous loop of accountability and alignment.
+
+---
+
+## 📋 Instructor Resources
+
+* [Instructor Prep Guide](./instructor-prep.md) — step-by-step prep checklist for the week
+  before the lab (OpenPages only, no notebooks required)
 
 
 
