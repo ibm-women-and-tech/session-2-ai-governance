@@ -2,7 +2,7 @@
 
 At this stage, your AI System (in this example, a simple Chatbot) is live and users in your organization are starting to use it. This step simulates incoming traffic and demonstrates how to identify and respond to metric anomalies.
 
-1. **Review Monitoring Data:** Go to the OpenScale console and navigate to the Test deployment. (Note: Production monitoring may have issues at this time.) Verify that monitoring data is flowing in correctly and check that all indicators are green.
+1. **Review Monitoring Data:** Go to the OpenScale console and navigate to the Test deployment. Verify that monitoring data is flowing in correctly and check that all indicators are green.
 
 <img width="800" alt="OpenScale Monitoring Dashboard" src="../../../3-ai-lifecycle/appendix/deployer/assets/model-deployment-simulation1.png"> 
 

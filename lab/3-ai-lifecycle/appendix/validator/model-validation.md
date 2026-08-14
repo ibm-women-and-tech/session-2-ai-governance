@@ -136,5 +136,5 @@ By performing thorough validation, including test data evaluation, you support t
 ---
 
 [← Back to main guide on OpenPages MRG](./model-validator-tasks.md)<br>
-[← Back to directory](../../guides-directory.md)
+[← Back to directory](../../../../guides-directory.md)
 

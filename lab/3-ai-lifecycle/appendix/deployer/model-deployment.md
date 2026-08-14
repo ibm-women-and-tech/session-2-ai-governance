@@ -30,7 +30,7 @@
 
 ---
 
-# Deployment Responsabilities
+# Deployment Responsibilities
 
 As a **Model Deployer**, your primary responsibilities include:
 
@@ -64,7 +64,6 @@ As a **Model Deployer**, your primary responsibilities include:
 2. Click the **3-dot menu** on the asset → select **Promote to Space**.
 
    
-![image](https://github.ibm.com/user-attachments/assets/353e1582-a793-4643-aad0-28969d7eb040)
 
 
      
@@ -171,7 +170,7 @@ As a **Model Deployer**, your primary responsibilities include:
 
 <img width="800" alt="Detached Prompt Template UI" src="./assets/model-deployment-monitoring-setup3.png"> 
 
-4. Ignore the warning (TOBERESOLVED) and setup the expected parameters, Click on **Advanced**
+4. Set up the expected parameters and click **Advanced**.
 
 <img width="800" alt="Detached Prompt Template UI" src="./assets/model-deployment-monitoring-setup5.png"> 
 
@@ -193,7 +192,7 @@ As a **Model Deployer**, your primary responsibilities include:
 
 At this stage your AI System (Here a simple Chatbot) is live, and users in your organization are starting to use. You will simulate incoming traffic and generate some issue with the metrics.
 
-1. (TOBERESOLVED) Go to the OpenScale console and go back to the Test deployment (Monitoring is failing on prod at the moment). Monitoring Data should flowing in real life and hopefully every indicators should be green
+1. Go to the OpenScale console and navigate to the Test deployment. In a live environment, monitoring data flows in continuously and all indicators should be green.
 
 <img width="800" alt="Detached Prompt Template UI" src="./assets/model-deployment-simulation1.png"> 
 
@@ -277,4 +276,4 @@ By deploying and tracking your **Agentic RAG prompt**, you ensure **reliable, co
 ---
 
 [← Back to main guide on OpenPages MRG](./model-deployer-tasks.md)<br>
-[← Back to directory](../../guides-directory.md)
+[← Back to directory](../../../../guides-directory.md)

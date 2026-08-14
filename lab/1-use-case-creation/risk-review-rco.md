@@ -1,17 +1,17 @@
-# Risk Review Process for Use case owner
+# Step 1c — Risk Review
 
-> **Login Note:** Make sure you are logged into **IBM OpenPages** using the **Use case owner** role before starting this task.
+> **Login Note:** Make sure you are logged into **IBM OpenPages** using the **watsonx-governance MRG Master** profile before starting this task. You are acting in the **Use Case Owner** role for this step.
 
  <img width="800" alt="Make sure you are logged into IBM OpenPages using the Use case owner role before starting this task." src="./assets/usecase18.png">
- 
-> This role is required to review and approve risks submitted by the Use Case Owner.
+
+> As the Use Case Owner, you are responsible for reviewing and assessing each risk that was automatically generated from your questionnaire answers.
 
 
 ---
 
 ## Overview
 
-As a **Use Case Owner**, your responsibility is to review risks submitted as part of a Use Case and determine the appropriate risk status. This process ensures that all risks are evaluated, documented, and aligned with your organization's governance standards.
+As the **Use Case Owner**, your responsibility is to review each risk that was automatically assigned to your Use Case after the questionnaires were submitted. For each risk, you decide whether it applies to your situation, assess its severity, and document your mitigation plan. This process ensures all risks are evaluated, documented, and aligned with your organisation's governance standards before the Use Case can move forward.
 
 ---
 
@@ -49,7 +49,7 @@ Steps:
 
 ---
 
-### 2. Start Risk Assessement
+### 2. Start Risk Assessment
 
 * Open the risk record.
 <img width="800" alt="Open the risk record." src="./assets/Risk01.png">
@@ -75,24 +75,23 @@ Then, click on the option **Ready for Assessment**, available on the Actions but
 
 ### 4. Perform Risk Assessment
 
-* Open the risk record.
- 
-* Fill the field values including:
+* Within the risk record, scroll to the **Risk Assessment** section.
 
-  * **Inherent Risk Rating** : This can be done by setting the Inherent Impact and Likelihood
-  * **Mitigation Strategy** : Describe the strategy to mitigate the risk, that is monitoring the hallucinations related metrics.
-  * **Residual Risk Rating** : This can be done by setting the Residual Impact and Likelihood
-  
+> **What do these fields mean?**
+> - **Inherent Risk Rating** — the severity of this risk *before* any controls or mitigations are in place. Set this by choosing the **Inherent Impact** (how bad the outcome would be) and **Inherent Likelihood** (how probable it is).
+> - **Mitigation Strategy** — describe what you will do to reduce the risk. For an AI chatbot this typically means monitoring hallucination-related metrics like Answer Relevance and Faithfulness.
+> - **Residual Risk Rating** — the severity that *remains after* your mitigations are applied. Set this by choosing **Residual Impact** and **Residual Likelihood**. Regulators such as the EU AI Act require documented evidence that risk owners have assessed not just the raw risk, but whether their controls are actually reducing it.
 
+* Fill in the field values:
 
-* Save and click on **Asssement Complete**:
+  * **Inherent Risk Rating** — set Inherent Impact and Inherent Likelihood
+  * **Mitigation Strategy** — describe monitoring or controls in place (e.g. monitoring hallucination metrics)
+  * **Residual Risk Rating** — set Residual Impact and Residual Likelihood
+
+* Save and click on **Assessment Complete**:
 <img width="800" alt="Save and click on Asssement Complete:" src="./assets/Risk_assessment_complete.png">
 
 * Choose **Continue and close tab**
----
-
-
-
 
 ---
 
@@ -104,10 +103,10 @@ Then, click on the option **Ready for Assessment**, available on the Actions but
 <img width="800" alt="After completing all risk review. Go to actions and click Submit for Stakeholder Review to progress the..." src="./assets/usecase_submit_for_stakeholder_review.png">
 
 
-####  Process Several Risks - Bulk Operation
+#### Process Several Risks — Bulk Operation
 
-Nota: 
-Please proceed with the following procedure If the message is displayed when submitting the case for stakeholder review. : "All associated risks should be assessed (marked as "Approved" or "Not Applicable") before submitting this use case for stakeholder review."
+> [!NOTE]
+> Use this procedure if you see the message: *"All associated risks should be assessed (marked as 'Approved' or 'Not Applicable') before submitting this use case for stakeholder review."*
 
 * Click on the Launch Grid Page section
 <img width="800" alt="Click on the Launch Grid Page section" src="./assets/risk-bulk-operation-1.png">
@@ -134,10 +133,7 @@ Please proceed with the following procedure If the message is displayed when sub
 
 ## Stakeholder Approval
 
-Your Use Case has now been submitted for stakeholder review and approval. The Use Case is in the hands of the designated stakeholders and is in the Stakeholder stage of the Use Case Request workflow.
-
-Before it can be moved to Approved for Development, the stakeholders must review the Use Case and either approve it or mark it as Not Applicable. 
-The actual Use Case reviews (there is one review by stakeholder) are found in the Use Case Approvals section of the Use Case record.
+Your Use Case has now been submitted for stakeholder review and approval. Before it can move to **Approved for Development**, the designated stakeholders must review it. Each stakeholder's review is found in the **Use Case Approvals** section of the Use Case record.
 <img width="800" alt="The actual Use Case reviews (there is one review by stakeholder) are found in the Use Case Approvals section..." src="./assets/UseCaseReview1.png">
 
 Click on the Use Case Review record to open it.
@@ -157,7 +153,7 @@ Once this information provided, you save and then click on the **Approve Use Cas
 
 <img width="800" alt="Once this information provided, you save and then click on the Approve Use Case button in the Actions menu." src="./assets/UseCaseReview3.png">
 
-Clock on **Continue and close tab** in the popup window and go back to your Use Case Record.
+Click on **Continue and close tab** in the popup window and go back to your Use Case Record.
 
 Ensure that all stakeholders have approved the Use Case.
 
@@ -170,6 +166,10 @@ By completing the **Risk Review**, you help ensure:
 * Risks are properly assessed and documented,
 * Compliance is upheld,
 * The organization follows a consistent and accountable risk management process.
+
+---
+
+➡️ **Next Step:** [Stakeholder Risk Endorsement](../2-risk-compliance-review/risk-endorsement-bul.md)
 
 ---
 

@@ -2,7 +2,7 @@
 
 ## Step 1: Review Metrics in OpenPages
 
-Go to the OpenPages application and locate your UseCase (example: JVP_AskrHR Automation using Agentic AI). Review the Metrics associated with the UseCase.
+Go to the OpenPages application and locate your Use Case (example: `JVP_AskHR Automation using Agentic AI`). Review the metrics associated with the Use Case.
 
 The Metric list depends on your Evaluation tool capabilities and the Risk Assessment. During the Risk Assessment, the reviewer identifies particular metrics to monitor.
 
@@ -55,7 +55,7 @@ This integration demonstrates one integration point between an external evaluati
 
 <img width="800" alt="Metric Values in OpenPages" src="./assets/external-evals6.png">
 
-Remember that you can also everaging IBM Watson Governance Model Management for out-of-the-box integrations
+Remember that you can also leverage IBM Watson Governance Model Management for out-of-the-box integrations.
 
 
-[← Back to main guide](./mitigating-incidents.md)
+[← Back to main guide](../mitigating-incidents.md)

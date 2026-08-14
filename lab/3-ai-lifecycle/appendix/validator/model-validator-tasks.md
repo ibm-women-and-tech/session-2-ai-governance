@@ -91,7 +91,7 @@ The go back to the Risk Assessment Task on the Model and Click **Submit for appr
 Edit the field task, adding the **Question Answering** task:<br>
 <img width="800" alt="Edit the field task, adding the Question Answering task:" src="./assets/valid_model_risk_identification.png">
 
-*Note:* For this Bootcamp, we are approving Granite 4.0 for *Question Answering* only, although Granite 4.0 has many more capabilities.
+*Note:* For this bootcamp, we are approving Granite 3.3 for *Question Answering* only, although Granite 3.3 has many more capabilities.
 
 Then Click on Approve Foundation Model for Use:<br>
 <img width="800" alt="Then Click on Approve Foundation Model for Use:" src="./assets/valid_model_approve_model_for_use.png">
@@ -173,7 +173,7 @@ Your validation work helps ensure that the **AI Use Case**:
 * Generate reliable and compliant outputs.
 * Meet expected performance benchmarks via test dataset evaluation.
 
-As Model Validator, you play a crucial world to prevent harmfull model to be deployed in production.
+As Model Validator, you play a crucial role in preventing harmful models from being deployed in production.
 
 ---
 ## Great Job!

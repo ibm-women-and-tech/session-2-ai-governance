@@ -1,24 +1,24 @@
 # Step 3 — AI Lifecycle Walkthrough
 
-> [!IMPORTANT]
-> **This step is instructor-led. Participants observe.**
-> You do not need to click anything during this step. Watch the instructor navigate the
-> governance console and follow along visually.
+> [!NOTE]
+> **No action needed — the instructor completed this for you before the session.**
+> All three roles below were run on your assigned Use Case before today. Use this guide to
+> understand what happened between Step 2 (Use Case approved for development) and
+> Step 4 (production incident). **During the session, proceed directly to Step 4.**
 
 ---
 
-## What You Are About to See
+## What You Are About to Read
 
 In Steps 1 and 2, your table created a Use Case and sent it through the risk and compliance
 review. It was approved for development.
 
-Now watch what happens next in a real organisation — three different roles take the Use Case
-from approved all the way to live in production. Each role has a distinct responsibility in
-the AI governance process, and each leaves a traceable record in the governance console.
+This step explains what happens next in a real organisation — three different roles take the
+Use Case from approved all the way to live in production. Each role has a distinct
+responsibility in the AI governance process, and each leaves a traceable record in the
+governance console.
 
-The instructor will navigate a pre-prepared Use Case live on screen. The same lifecycle
-was run on **your assigned Use Case** during prep week — so what you are seeing is exactly
-the state your Use Case is in right now.
+The instructor ran all three roles on **your assigned Use Case** before the session — so the state you will see in Step 4 is the direct result of everything described here.
 
 ---
 
@@ -27,7 +27,7 @@ the state your Use Case is in right now.
 > **Role: Model Developer**
 > The Model Developer is responsible for building and testing the AI system and documenting
 > the work in the governance console so it can be independently reviewed. In a real
-> organisation this is typically a data scientist or ML engineer.
+> organisation, this is typically a data scientist or ML engineer.
 
 ### What Happened
 
@@ -39,14 +39,12 @@ Once satisfied with the results, the developer marked the development complete a
 the Use Case for validation. At that point, the governance console automatically notified
 the Model Validator that their work could begin.
 
-### Show on Screen
+### What You Can Explore
 
-> **Instructor:** Navigate to the assigned demo Use Case.
-> 1. Show the Use Case status field — it reads **Under Development**
-> 2. Scroll to the **Models** section — show the two entries that appeared automatically:
->    the IBM Granite foundation model and the Agentic RAG LangChain implementation
-> 3. Click on one of the model entries — show the **AI Factsheet** fields automatically
->    populated from the development tooling (model name, version, evaluation results)
+Open your assigned Use Case in OpenPages and navigate to the **Models** section to see this in the live system:
+1. The Use Case status field — it reads **Under Development** (or later) at this point in the lifecycle
+2. The **Models** section — two entries that appeared automatically: the IBM Granite foundation model and the Agentic RAG LangChain implementation
+3. Click into one of the model entries — the **AI Factsheet** fields are automatically populated from the development tooling (model name, version, evaluation results)
 
 ### What to Notice
 
@@ -89,13 +87,12 @@ They found two AI systems that needed approval before validation could proceed:
 Once both models were approved for production, the validator reviewed the full Use Case,
 confirmed everything was in order, and initiated the Deployment Approval process.
 
-### Show on Screen
+### What You Can Explore
 
-> **Instructor:** On the same Use Case:
-> 1. Scroll to the **Models** section — show both model entries now showing **"Approved for
->    production use"** status
-> 2. Show the completed questionnaire tasks in the **task history** of the Use Case
-> 3. Show the Use Case status — it should read **"Approved for Deployment"** or similar
+On your assigned Use Case in OpenPages:
+1. Scroll to the **Models** section — both model entries now show **"Approved for production use"** status
+2. Check the **task history** of the Use Case — you will see the completed questionnaire tasks logged there
+3. The Use Case status reads **"Approved for Deployment"** or similar
 
 ### What to Notice
 
@@ -131,13 +128,12 @@ Once approved, the AIOps Engineer deployed the AI system to the production envir
 confirmed the deployment in the governance console. At that point, the Use Case status
 changed to **"In Operation"** — meaning the AI system is live and being used by real users.
 
-### Show on Screen
+### What You Can Explore
 
-> **Instructor:** On the same Use Case:
-> 1. Show the Use Case status — **In Operation**
-> 2. Show the deployment record that was created when the AIOps Engineer confirmed deployment
-> 3. Point out the full status trail visible in the Use Case history — from "Approved for
->    Development" all the way to "In Operation", with every transition logged
+On your assigned Use Case in OpenPages:
+1. The Use Case status is now **In Operation**
+2. A deployment record was created when the AIOps Engineer confirmed deployment — it is visible in the Use Case record
+3. The full status trail is visible in the Use Case history — from "Approved for Development" all the way to "In Operation", with every transition logged
 
 ### What to Notice
 
@@ -165,17 +161,14 @@ In Step 4, you will take on the role of the **Risk & Compliance Officer** — th
 is notified when something goes wrong in production and is responsible for resolving it.
 
 An issue has already been detected on your assigned Use Case. Go to
-[Step 4 — Incident Management](../../4-incident-management/mitigating-incidents.md) to begin.
+[Step 4 — Incident Management](../4-incident-management/mitigating-incidents.md) to begin.
 
 ---
 
 ## Appendix — Technical Deep Dive Guides
 
 > The guides below document every technical step performed on your behalf during prep week.
-> They are provided here as a reference for self-study after the lab.
->
-> **Note:** TechZone environment access is not available after today's session. These guides
-> require a live TechZone environment to follow hands-on.
+> They are provided here as a reference for self-study.
 
 ### Role: Model Developer
 - [Developer Tasks — OpenPages governance console](./appendix/developer/model-developer-tasks.md)

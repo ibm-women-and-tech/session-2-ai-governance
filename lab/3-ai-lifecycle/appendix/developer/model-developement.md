@@ -1,5 +1,5 @@
 
-# Model Developer's Guide to perform Model Developement on watsonx
+# Model Developer's Guide to Model Development on watsonx
 
 ## Overview
 
@@ -34,7 +34,7 @@ This repository contains the Model Developer's Guide, focusing on automating HR 
 
 The Agentic RAG model is already developed and deployed. To access it:
 
-1. Log in to the **IBM Cloud** platform using the **[Credential Guide](../../credential-directory.md)**.
+1. Log in to the **IBM Cloud** platform using the credentials provided by your instructor.
 
 <img width="800" alt="IBM Cloud Login" src="./assets/Model1.png">
 
@@ -276,6 +276,6 @@ Finally **Agentic RAG** getting tracked in **AI Use case**. Click on **Agentic R
 
 ---
 
-[← Back to mode developer task on OpenPages MRG](./model-developer-tasks.md)<br>
-[← Back to directory](../../guides-directory.md)
+[← Back to Model Developer Tasks on OpenPages MRG](./model-developer-tasks.md)<br>
+[← Back to directory](../../../../guides-directory.md)
 

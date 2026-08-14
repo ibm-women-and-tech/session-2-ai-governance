@@ -7,7 +7,6 @@
 - [Introduction](#introduction)
 - [Hands-on step-by-step lab](#hands-on-lab)
 - [Guide directory](./guides-directory.md)
-- Credential directory
 
 -------
 # Introduction
@@ -25,7 +24,7 @@ AI was everywhere, but **nobody really knew**:
 
 Jose was responsible for managing all that risk — but he had **no clear way** to do it.
 
-So, Jose and his team decided to leverage **watsonx.governance** to make AI governance easy, clear, and reliable and to easy the collaborate with all the stakeholders, including Maria, the AI engineer.
+So, Jose and his team decided to leverage **watsonx.governance** to make AI governance easy, clear, and reliable, and to enable collaboration with all the stakeholders, including Maria, the AI engineer.
 
 
 ## 🎯 What Jose Wanted to Fix
@@ -46,7 +45,7 @@ And that’s where **watsonx.governance** helps.
 
 ## 👥 Who's involved in AI Governance?
 
-AI Governance is a teams sport involving different roles in an organization. Though it's not uncommon to find scenarios where folks could perform the roles of severals personas, here's what these roles might look like:
+AI Governance is a team sport involving different roles in an organisation. Though it's not uncommon for one person to cover several personas, here's what these roles might look like:
 
 <img width="854" alt="personas" src="./assets/personas.png">
 
@@ -72,8 +71,8 @@ A simple, structured process for managing AI models from idea to remediation.
 # 📄 Hands-on step-by-step guides
 <img width="972" alt="Hands On Lab" src="./assets/hands_on_lab_images/hands-on-lab.png">
 
-> [!Important]
-> In this lab, you will learn how to work on a real AI Governance use case involving multiple personas. You will work together with your team and each team member will be assigned a role from the list of personas above. For simplicity, all profiles have been granted privileges to run the steps for any of the personas, through the **watsonx-governance MRG Master** profile.
+> [!IMPORTANT]
+> In this lab, you will work through a real AI governance use case covering multiple personas. Each team member is assigned a role from the list above. For simplicity, all accounts have been granted privileges to run the steps for any persona via the **watsonx-governance MRG Master** profile.
 > 
 ## ⚙️ Pre-requisites
 
@@ -87,7 +86,7 @@ A simple, structured process for managing AI models from idea to remediation.
 |------|------|-------|---------------------|
 | 1 | **Use Case Creation** | Use Case Owner | [Use Case Creation](./lab/1-use-case-creation/usecase-creation-model-owner.md) |
 | 2 | **Risk & Compliance Review** | Risk & Compliance Officer | [Risk Review](./lab/1-use-case-creation/risk-review-rco.md), [Risk Endorsement](./lab/2-risk-compliance-review/risk-endorsement-bul.md) |
-| 3 | **AI Lifecycle** *(instructor-led)*<br>3a. Model Developer<br>3b. Model Validator<br>3c. AIOps Engineer | Instructor presents;<br>participants observe | [AI Lifecycle Walkthrough](./lab/3-ai-lifecycle/ai-lifecycle-walkthrough.md) |
+| 3 | **AI Lifecycle** *(reference only — not run in session)*<br>3a. Model Developer<br>3b. Model Validator<br>3c. AIOps Engineer | Self-study reading | [AI Lifecycle Walkthrough](./lab/3-ai-lifecycle/ai-lifecycle-walkthrough.md) |
 | 4 | **Incident Management** | Risk & Compliance Officer | [Incident Management](./lab/4-incident-management/mitigating-incidents.md) |
 
 At the end of each lab you will find a [link](./guides-directory.md) to the guide directory.
@@ -103,8 +102,8 @@ At the end of each lab you will find a [link](./guides-directory.md) to the guid
 > ![OpenPages Launch](hands_on_lab_images/cloud_openpages.png)
 -->
 
-> [!Important]
-> After logging make sure that the Profile has been set to **watsonx-governance MRG Master**:
+> [!IMPORTANT]
+> After logging in, make sure the Profile is set to **watsonx-governance MRG Master**:
 
 <img width="972" alt="Screenshot 2025-08-14 at 3 47 43 PM" src="./assets/hands_on_lab_images/Profile.png">
 
@@ -136,21 +135,21 @@ before development can begin.
 * [Stakeholder Risk Endorsement](./lab/2-risk-compliance-review/risk-endorsement-bul.md)
 
 
-## 🎬 Step 3 — AI Lifecycle Walkthrough *(Instructor-Led)*
+## 🎬 Step 3 — AI Lifecycle Walkthrough *(Reference — not run in session)*
 
-> **Participants observe. No hands-on action required during this step.**
+> [!NOTE]
+> **No action needed — the instructor completed this for you before the session.**
+> Your assigned Use Case is already in **"In Operation"** state as a result. **Proceed directly to Step 4.**
 
-This step covers three roles and three sub-steps. The instructor will navigate a pre-prepared
-Use Case live on screen, showing the full journey from "Approved for Development" to
-"In Operation":
+This is an important step in the real-world AI governance process — covering how a model moves from approval through development, validation, and deployment. It was completed before the session so you can focus hands-on time on Steps 1, 2, and 4.
 
-- **3a. Model Developer** — builds and submits the AI system for validation
-- **3b. Model Validator** — independently validates quality and approves for production
-- **3c. AIOps Engineer** — deploys the model and confirms it in the governance console
+The [AI Lifecycle Walkthrough](./lab/3-ai-lifecycle/ai-lifecycle-walkthrough.md) guide explains what happened across three roles:
 
-🗂️ Follow along with the instructor using this guide:
+- **3a. Model Developer** — built and submitted the AI system for validation
+- **3b. Model Validator** — independently validated quality and approved for production
+- **3c. AIOps Engineer** — deployed the model and confirmed it in the governance console
 
-* [AI Lifecycle Walkthrough](./lab/3-ai-lifecycle/ai-lifecycle-walkthrough.md)
+Read it at your own pace — before, during a break, or after the session.
 
 
 ## 🔍 Step 4 — Incident Management
@@ -159,8 +158,7 @@ As a **Risk & Compliance Officer**, you are responsible for reviewing and resolv
 that arise when a live AI system has a performance issue. In this step, **each participant
 works their own pre-assigned Use Case independently.**
 
-Your instructor will share an assignment table at the start of this step — find your Use Case
-name and open the guide below.
+Your Use Case was assigned to you before the session started. Use the name you were given and open the guide below.
 
 * [Incident Management](./lab/4-incident-management/mitigating-incidents.md)
 
@@ -178,13 +176,4 @@ its risks, to observing development and validation, to resolving a real producti
 > 🛡️ Governance is not a one-time check — it's a continuous loop of accountability and alignment.
 
 ---
-
-## 📋 Instructor Resources
-
-* [Instructor Prep Guide](./instructor-prep.md) — step-by-step prep checklist for the week
-  before the lab (OpenPages only, no notebooks required)
-
-
-
-
 

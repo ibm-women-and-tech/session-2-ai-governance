@@ -14,7 +14,6 @@
 > 3. An **Issue** was automatically created and assigned to your user account
 >
 > Your Issue is waiting in your **My Tasks** inbox right now.
-> Full prep details: [Instructor Prep Guide](../../instructor-prep.md)
 
 ---
 
@@ -22,10 +21,10 @@
 
 > **Your assigned Use Case:** ___________________________________________
 >
-> *(Check the assignment table shared by your instructor)*
+> *(Your Use Case name was shared with you before the session started)*
 
 Your Issue has been pre-created on this Use Case and is waiting in your **My Tasks** inbox.
-**Go straight to Step 2 below to begin.**
+**Go straight to Step 1 below to begin.**
 
 ---
 
@@ -44,7 +43,7 @@ Your Issue has been pre-created on this Use Case and is waiting in your **My Tas
 >    - **Issue Name:** `Answer Relevance Breach — [your Use Case name]`
 >    - **Issue Owner:** yourself (your login account)
 >    - **Parent Entity:** your assigned Use Case
-> 4. Click **Save** — then continue to Step 2 below
+> 4. Click **Save** — then continue to Step 1 below
 
 ---
 
@@ -55,13 +54,24 @@ mitigate, and communicate risks when something goes wrong with a live AI system.
 a structured workflow for logging issues, assigning responsibilities, and ensuring timely
 resolution — creating a full audit trail at every step.
 
-In this lab, your AI system has a production metric breach: the **Answer Relevance** score
-has dropped below its configured threshold. Your job is to investigate, remediate, and close
-the incident.
+### Your scenario
+
+Your AskHR AI system is live and being used by real employees to answer HR policy questions.
+The **Answer Relevance** metric has dropped below its configured threshold.
+
+> **What is Answer Relevance?** Answer Relevance measures whether the AI's response actually
+> addresses what the user asked. A score below the threshold means employees are receiving
+> answers that are off-topic or unhelpful — for example, asking about parental leave policy
+> and getting a response about a different policy entirely. This is exactly the kind of
+> quality failure that governance frameworks like the EU AI Act require organisations to
+> detect, log, and remediate with a documented audit trail.
+
+Your job is to investigate, document a remediation plan, get it approved, and close the
+incident — leaving a complete record of what happened and what was done about it.
 
 ---
 
-## Step 2 — Navigate to Your Assigned Issue
+## Step 1 — Navigate to Your Assigned Issue
 
 - Click on the **My Tasks** tab in IBM OpenPages.
 
@@ -73,7 +83,7 @@ the incident.
 
 ---
 
-## Step 3 — Assess Risk and Add Mitigation Actions
+## Step 2 — Assess Risk and Add Mitigation Actions
 
 - Review the Issue details — determine the **Issue Type**, **Issue Status**,
   **Who Identified the Issue**, and **Priority**
@@ -85,6 +95,8 @@ the incident.
 
 - Create an Action Item to remediate the identified deficiency — click **New Action Item**
 
+> **Why create an Action Item?** Closing an issue directly would leave no documented record of what was actually done to fix it. An Action Item is the formal remediation record — it captures who did what and when, and creates the audit trail that regulators require. Without it, you cannot prove the issue was properly addressed.
+
 <img width="800" alt="Create Action Items to remediate the identified deficiency by clicking on New Action Item" src="./assets/Issue8.png">
 
 - Fill out all key details and click **Save**
@@ -95,7 +107,7 @@ the incident.
 
 <img width="800" alt="Action has been created." src="./assets/Issue13.png">
 
-- Document the remediation steps you took, then click **Actions → Submit for Approval**
+- Document the remediation steps you plan to take, then click **Actions → Submit for Approval**
 
 <img width="800" alt="Document the remediation steps undertaken, then click on Action > Submit for approval" src="./assets/Issue5.png">
 
@@ -105,7 +117,9 @@ the incident.
 
 ---
 
-## Step 4 — Submit for Review
+## Step 3 — Submit for Review
+
+> **Why submit for review before closing?** This gate enforces segregation of duties — the same person who documented the remediation should not be the one who signs it off as complete. A second reviewer confirms the fix is adequate before the issue is formally closed. This creates an independent verification record in the audit trail, which is what compliance frameworks require.
 
 - Navigate to the **Issue** record
 - Click **Actions → Submit for Review**
@@ -114,9 +128,9 @@ the incident.
 
 ---
 
-## Step 5 — Close the Incident
+## Step 4 — Close the Incident
 
-- Click **Actions → Approve** → click **Continue**
+- On the **Issue** record, click **Actions → Approve** → click **Continue**
 - Click **Actions → Close** → click **Continue**
 
 <img width="800" alt="Click on Actions > Close, then click Continue" src="./assets/Issue11.png">
@@ -145,8 +159,8 @@ using watsonx.governance.
 > OpenPages. They require **OpenScale** access, which is not available in this lab session.
 > Provided here as a reference for after the session.
 
-- [Running evaluations via Model Management (OpenScale)](./model-management-evals.md)
-- [Pushing metrics from an external evaluation application](./integrating-external-evals.md)
+- [Running evaluations via Model Management (OpenScale)](./appendix/model-management-evals.md)
+- [Pushing metrics from an external evaluation application](./appendix/integrating-external-evals.md)
 
 ---
 

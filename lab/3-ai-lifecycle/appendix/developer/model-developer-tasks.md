@@ -21,9 +21,9 @@ This guide contains the Model Developer's lab for AI Governance, focusing on aut
 
 ### **Step 1 – Starting the development**
 
-As a delevoper or developer manager, you will start the development process from the governance console.
+As a developer or development manager, you will start the development process from OpenPages.
 
-Go back to the Use Case on the governance console. 
+Go back to the Use Case in OpenPages.
 
 Access the Use Case, review the value of the field **technical owner**. If not set, set the value to yourself and click on Save:
 
@@ -58,18 +58,18 @@ We have streamlined all the work into a single Notebook.
 
 > **Note:** The model chosen is the IBM OpenSource Model [Granite 3.3](https://huggingface.co/ibm-granite/granite-3.3-8b-instruct). The Granite models are provided by IBM. Key facts to take into account:
 1. IBM Research Armonk, which is the entity delivering the Granite Models is a [ISO42001 Certified Organization](https://www.ibm.com/new/announcements/ibm-granite-iso-42001) 
-2. IBM has signed the (General-Purpose AI Code of Practice)[https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai] to assess its conformity to EU AI Act Article 53.
+2. IBM has signed the [General-Purpose AI Code of Practice](https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai) to assess its conformity to EU AI Act Article 53.
 
 ---
 
 
-### **Step 2 – Review the documentation automatically updated on the Governance Console**
+### **Step 2 – Review the documentation automatically updated on OpenPages**
 
-Because watsonx is tighly integrated with Model Risk Governance, we were able to attach the new development to our Use Case within watsonx and that enables watsonx to directly update the Use Case in Model Risk Governance with the information coming from developement and testing. 
+Because watsonx is tightly integrated with OpenPages, attaching the development to the Use Case within watsonx allows OpenPages to automatically update the Use Case record with information from development and testing.
 
-Go back to the Governance Console and to the Use Case, note that the status has changed to **Under development**
+Go back to OpenPages and to the Use Case — note that the status has changed to **Under development**.
 
-<img width="800" alt="Go back to the Governance Console and to the Use Case, note that the status has changed to Under development" src="./assets/developer_uc_status_underdevelopment.png">
+<img width="800" alt="Go back to OpenPages and to the Use Case — note that the status has changed to Under development." src="./assets/developer_uc_status_underdevelopment.png">
 
 Scroll Down to the Models section, you should see two new entries:
 
@@ -90,7 +90,7 @@ Notice the status is set to **proposed** and review all the information pushed f
 
 ### **Step 3 – Complete the development and testing phase and submit for validation**
 
-As a model developer, if you are happy with your development, you can complete that phase in the Governance Console, that will notify Model Validators to start their work.
+As a model developer, when you are happy with your development, you can complete that phase in OpenPages — this will notify the Model Validators to start their work.
 
 Go back to the Use Case, click on Actions --> Mark Development Complete
 
