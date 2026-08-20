@@ -1,7 +1,6 @@
 # Creating Use Cases in watsonx.governance
 
-> **Login Note:** Before starting, ensure you are logged into **IBM OpenPages** using the **watsonx-governance MRG Master** profile.
-> This is required to create and manage Use Cases and associated risk and compliance workflows.
+> **Before starting:** Make sure you have completed [Step 00 — Getting Started](../0-getting-started/getting-started) and are logged in to **IBM OpenPages** using the **watsonx-governance MRG Master** profile.
 
 ---
 

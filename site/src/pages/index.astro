@@ -28,6 +28,12 @@ const personas = [
 
 const steps = [
   {
+    number: "00", label: "Getting Started", sublabel: "All participants",
+    guides: [
+      { title: "Login & Setup", href: `${base}/steps/0-getting-started/getting-started`, type: "Setup" },
+    ],
+  },
+  {
     number: "01", label: "Use Case Creation", sublabel: "Use Case Owner",
     guides: [
       { title: "Use Case Creation", href: `${base}/steps/1-use-case-creation/usecase-creation-model-owner`, type: "Hands-on" },
@@ -102,7 +108,7 @@ const steps = [
       <p class="mt-5 text-base text-gray-500 max-w-xl leading-relaxed">
         Jose works at <strong>TechCorp Inc.</strong>, a large multinational enterprise using AI to improve HR processes like hiring and employee planning. AI was everywhere, but nobody really knew who built what, whether models were fair and safe, or what to do when something went wrong. So, Jose and his team decided to leverage <strong>watsonx.governance</strong> to make AI governance easy, clear, and reliable.
       </p>
-      <a href={`${base}/steps/1-use-case-creation/usecase-creation-model-owner`}
+      <a href={`${base}/steps/0-getting-started/getting-started`}
         class="inline-block mt-8 bg-violet-600 hover:bg-violet-700 text-white text-sm font-semibold px-7 py-3 rounded-xl transition-colors">
         Start the lab →
       </a>
