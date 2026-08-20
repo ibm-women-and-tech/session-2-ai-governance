@@ -20,6 +20,14 @@ const minHeadingDepth = headings.length ? Math.min(...headings.map((h) => h.dept
 
 const steps = [
   {
+    number: "0",
+    label: "Getting Started",
+    instructor: false,
+    items: [
+      { label: "Login & Setup", href: `${base}/steps/0-getting-started/getting-started` },
+    ],
+  },
+  {
     number: "01",
     label: "Use Case Creation",
     instructor: false,

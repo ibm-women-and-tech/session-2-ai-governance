@@ -6,17 +6,17 @@ Before you can begin any of the lab activities, you need to access **IBM OpenPag
 
 ## Step 1 — Open the Login Page
 
-Click the link provided by your instructor. It will look similar to:
+Your instructor will share three things with you: a **link**, a **username**, and a **password**. The link will look similar to:
 
 ```
-https://cloud.ibm.com/authorize/a9c5c6c8221e41569454f8fbe57316d5/tknyTeeIFM
+https://cloud.ibm.com/authorize/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/xxxxxxxxxx
 ```
 
-This will take you to the **IBM Technology Zone login page**.
+Click the link — it will take you to the **IBM Technology Zone login page**
 
 <img width="800" alt="IBM Technology Zone login screen with Username and Password fields and a Sign In button." src="./assets/login-screen.png">
 
-Enter the **username** and **password** given to you by your instructor, then click **Sign In**.
+Enter the **username** and **password** provided by your instructor, then click **Sign In**.
 
 ---
 
@@ -48,4 +48,6 @@ Once OpenPages loads, make sure you are using the **watsonx-governance MRG Maste
 
 ---
 
-Proceed to **Step 01 → Use Case Creation** to begin the lab.
+---
+
+➡️ **Next Step:** [Use Case Creation](../1-use-case-creation/usecase-creation-model-owner.md)
