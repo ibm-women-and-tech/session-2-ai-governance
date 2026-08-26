@@ -1,5 +1,13 @@
 # Step 4 — Incident Management
 
+> [!NOTE]
+> **Beyond today's session — see what you can do next.**
+> Incident Management closes the loop on the AI governance lifecycle: investigating and
+> resolving a live production issue. It goes beyond what we have time for today, but
+> everything below is self-contained if you'd like to work through it on your own afterwards.
+
+---
+
 > **Login Note:** Before starting, ensure you are logged into IBM OpenPages with the
 > **watsonx-governance MRG Master** profile.
 

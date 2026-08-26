@@ -87,7 +87,7 @@ A simple, structured process for managing AI models from idea to remediation.
 | 1 | **Use Case Creation** | Use Case Owner | [Use Case Creation](./lab/1-use-case-creation/usecase-creation-model-owner.md) |
 | 2 | **Risk & Compliance Review** | Risk & Compliance Officer | [Risk Review](./lab/1-use-case-creation/risk-review-rco.md), [Risk Endorsement](./lab/2-risk-compliance-review/risk-endorsement-bul.md) |
 | 3 | **AI Lifecycle** *(reference only — not run in session)*<br>3a. Model Developer<br>3b. Model Validator<br>3c. AIOps Engineer | Self-study reading | [AI Lifecycle Walkthrough](./lab/3-ai-lifecycle/ai-lifecycle-walkthrough.md) |
-| 4 | **Incident Management** | Risk & Compliance Officer | [Incident Management](./lab/4-incident-management/mitigating-incidents.md) |
+| 4 | **Incident Management** *(Beyond today's session — see what you can do next)* | Risk & Compliance Officer | [Incident Management](./lab/4-incident-management/mitigating-incidents.md) |
 
 At the end of each lab you will find a [link](./guides-directory.md) to the guide directory.
 
@@ -139,9 +139,11 @@ before development can begin.
 
 > [!NOTE]
 > **No action needed — the instructor completed this for you before the session.**
-> Your assigned Use Case is already in **"In Operation"** state as a result. **Proceed directly to Step 4.**
+> Your assigned Use Case is already in **"In Operation"** state as a result. **This concludes
+> the hands-on portion of today's session — see Step 4 below for what you can do next on
+> your own.**
 
-This is an important step in the real-world AI governance process — covering how a model moves from approval through development, validation, and deployment. It was completed before the session so you can focus hands-on time on Steps 1, 2, and 4.
+This is an important step in the real-world AI governance process — covering how a model moves from approval through development, validation, and deployment. It was completed before the session so you can focus hands-on time on Steps 1 and 2.
 
 The [AI Lifecycle Walkthrough](./lab/3-ai-lifecycle/ai-lifecycle-walkthrough.md) guide explains what happened across three roles:
 
@@ -152,13 +154,11 @@ The [AI Lifecycle Walkthrough](./lab/3-ai-lifecycle/ai-lifecycle-walkthrough.md)
 Read it at your own pace — before, during a break, or after the session.
 
 
-## 🔍 Step 4 — Incident Management
+## 🔍 Step 4 — Incident Management *(Beyond today's session — see what you can do next)*
 
-As a **Risk & Compliance Officer**, you are responsible for reviewing and resolving incidents
-that arise when a live AI system has a performance issue. In this step, **each participant
-works their own pre-assigned Use Case independently.**
-
-Your Use Case was assigned to you before the session started. Use the name you were given and open the guide below.
+This step goes beyond what we have time for today. As a **Risk & Compliance Officer**, you
+would investigate and resolve an incident when a live AI system has a performance issue —
+closing the loop on the full AI governance lifecycle.
 
 * [Incident Management](./lab/4-incident-management/mitigating-incidents.md)
 
@@ -166,14 +166,17 @@ Your Use Case was assigned to you before the session started. Use the name you w
 
 ## 🎉 Congratulations!
 
-You have completed the full AI governance lifecycle — from defining a Use Case and assessing
-its risks, to observing development and validation, to resolving a real production incident.
+You have completed today's hands-on session — from defining a Use Case and assessing its
+risks, to observing how it moves through development and validation across the full AI
+lifecycle.
 
 * You traced an AI system from idea to production
 * You applied risk and compliance controls at every stage
-* You resolved a production incident with a full audit trail
 
 > 🛡️ Governance is not a one-time check — it's a continuous loop of accountability and alignment.
+>
+> **See what you can do next:** try [Step 4 — Incident Management](./lab/4-incident-management/mitigating-incidents.md)
+> on your own to close the loop and resolve a live production incident.
 
 ---
 

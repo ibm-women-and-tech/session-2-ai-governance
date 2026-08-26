@@ -7,7 +7,7 @@
 | 1 | **Use Case Creation** | Use Case Owner | [Use Case Creation](./lab/1-use-case-creation/usecase-creation-model-owner.md), [Risk Review](./lab/1-use-case-creation/risk-review-rco.md) |
 | 2 | **Risk & Compliance Review** | Risk & Compliance Officer | [Risk Endorsement](./lab/2-risk-compliance-review/risk-endorsement-bul.md) |
 | 3 | **AI Lifecycle** *(reference only — not run in session)*<br>3a. Model Developer<br>3b. Model Validator<br>3c. AIOps Engineer | Self-study reading | [AI Lifecycle Walkthrough](./lab/3-ai-lifecycle/ai-lifecycle-walkthrough.md) |
-| 4 | **Incident Management** | Risk & Compliance Officer | [Incident Management](./lab/4-incident-management/mitigating-incidents.md) |
+| 4 | **Incident Management** *(Beyond today's session — see what you can do next)* | Risk & Compliance Officer | [Incident Management](./lab/4-incident-management/mitigating-incidents.md) |
 
 ---
 

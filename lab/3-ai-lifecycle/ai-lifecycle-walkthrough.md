@@ -4,7 +4,8 @@
 > **No action needed — the instructor completed this for you before the session.**
 > All three roles below were run on your assigned Use Case before today. Use this guide to
 > understand what happened between Step 2 (Use Case approved for development) and
-> Step 4 (production incident). **During the session, proceed directly to Step 4.**
+> Step 4 (production incident). **This is the last step of today's session — see
+> "What Happens Next" below for what you can do next.**
 
 ---
 
@@ -155,13 +156,14 @@ On your assigned Use Case in OpenPages:
 
 ## What Happens Next
 
-The AI system is now live. Real users are querying it. Monitoring is active.
+The AI system is now live. Real users are querying it. Monitoring is active. This is where
+today's session ends.
 
-In Step 4, you will take on the role of the **Risk & Compliance Officer** — the person who
-is notified when something goes wrong in production and is responsible for resolving it.
-
-An issue has already been detected on your assigned Use Case. Go to
-[Step 4 — Incident Management](../4-incident-management/mitigating-incidents.md) to begin.
+**Beyond today's session — see what you can do next:** Step 4 puts you in the role of the
+**Risk & Compliance Officer** — the person notified when something goes wrong in production
+and responsible for resolving it. It goes beyond what we have time for today, but the guide
+is fully self-contained if you'd like to try it on your own:
+[Step 4 — Incident Management](../4-incident-management/mitigating-incidents.md)
 
 ---
 

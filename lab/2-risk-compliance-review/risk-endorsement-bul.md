@@ -92,9 +92,14 @@ Your review ensures only **well-governed, risk-aligned initiatives** move forwar
 
 ---
 
-➡️ **Next Step:** [Step 4 — Incident Management](../4-incident-management/mitigating-incidents.md)
+🎉 **This wraps up today's hands-on session.**
 
-> Step 3 (AI Lifecycle Walkthrough) was completed before the session — read it at your own pace for context on what happened between this step and Step 4.
+> Step 3 (AI Lifecycle Walkthrough) is self-study reading — read it at your own pace for
+> context on how a Use Case moves from approval to production.
+>
+> **Beyond today's session — see what you can do next:** once you're ready to go further, try
+> [Step 4 — Incident Management](../4-incident-management/mitigating-incidents.md) on your
+> own to close the loop and resolve a live production incident.
 
 ---
 

@@ -14,8 +14,8 @@ const fixes = [
 const journey = [
   { number: "01", title: "Use Case Creation", desc: "Create a new AI use case and complete initial risk and compliance assessments.", owner: "Use Case Owner" },
   { number: "02", title: "Risk & Compliance Review", desc: "Review risk level and compliance applicability; endorse or reject the use case.", owner: "Risk & Compliance Officer" },
-  { number: "03", title: "AI Lifecycle", desc: "3 roles, 3 sub-steps: the instructor walks through model development (3a), validation (3b) and deployment (3c) live — you observe and ask questions.", owner: ["3a · Model Developer", "3b · Model Validator", "3c · AIOps Engineer"], instructor: true },
-  { number: "04", title: "Incident Management", desc: "Investigate and resolve a production metric breach using the governance console.", owner: "Risk & Compliance Officer" },
+  { number: "03", title: "AI Lifecycle", desc: "3 roles, 3 sub-steps: the instructor walks through model development (3a), validation (3b) and deployment (3c) live — you observe and ask questions.", owner: ["3a · Model Developer", "3b · Model Validator", "3c · AIOps Engineer"], instructor: true, instructorLabel: "Demo" },
+  { number: "04", title: "Incident Management", desc: "Investigate and resolve a production metric breach using the governance console. Beyond today's session — see what you can do next.", owner: "Risk & Compliance Officer", beyondToday: true },
 ];
 
 const personas = [
@@ -47,9 +47,9 @@ const steps = [
     ],
   },
   {
-    number: "03", label: "AI Lifecycle", sublabel: "Instructor-led · 3 roles · 3 sub-steps", instructor: true,
+    number: "03", label: "AI Lifecycle", sublabel: "Demo · 3 roles · 3 sub-steps", instructor: true,
     guides: [
-      { title: "Full Walkthrough Guide", href: `${base}/steps/3-ai-lifecycle/ai-lifecycle-walkthrough`, type: "Instructor-led" },
+      { title: "Full Walkthrough Guide", href: `${base}/steps/3-ai-lifecycle/ai-lifecycle-walkthrough`, type: "Demo" },
     ],
     substeps: [
       {
@@ -79,9 +79,9 @@ const steps = [
     ],
   },
   {
-    number: "04", label: "Incident Management", sublabel: "Risk & Compliance Officer",
+    number: "04", label: "Incident Management", sublabel: "Risk & Compliance Officer · Beyond today's session", beyondToday: true,
     guides: [
-      { title: "Incident Management", href: `${base}/steps/4-incident-management/mitigating-incidents`, type: "Hands-on" },
+      { title: "Incident Management", href: `${base}/steps/4-incident-management/mitigating-incidents`, type: "Beyond today" },
     ],
     appendix: [
       { title: "Model Management Evaluations", href: `${base}/steps/4-incident-management/appendix/model-management-evals`, type: "Appendix" },
@@ -181,7 +181,8 @@ const steps = [
                 <span class="inline-flex items-center justify-center w-6 h-6 rounded-md border text-[11px] font-bold shrink-0 bg-violet-100 border-violet-200 text-violet-700">
                   {j.number}
                 </span>
-                {j.instructor && <span class="text-[10px] font-medium text-gray-400">Instructor-led</span>}
+                {j.instructor && <span class="text-[10px] font-medium text-gray-400">Demo</span>}
+                {j.beyondToday && <span class="text-[10px] font-medium text-gray-400">Beyond today's session</span>}
               </div>
               <p class="text-sm font-semibold text-gray-900 leading-snug">{j.title}</p>
               <p class="text-xs text-gray-500 mt-1.5 leading-relaxed flex-1">{j.desc}</p>
@@ -218,7 +219,12 @@ const steps = [
               </div>
               {step.instructor && (
                 <span class="text-[10px] text-gray-400 font-medium">
-                  Instructor-led
+                  Demo
+                </span>
+              )}
+              {step.beyondToday && (
+                <span class="text-[10px] text-gray-400 font-medium">
+                  Beyond today's session
                 </span>
               )}
             </div>
@@ -229,7 +235,7 @@ const steps = [
                 <a href={guide.href}
                    class="flex items-center justify-between px-5 py-3 hover:bg-violet-50 transition-colors group">
                   <span class="text-sm text-gray-800 group-hover:text-violet-700 font-medium">{guide.title}</span>
-                  <span class={`text-xs rounded px-2 py-0.5 shrink-0 ml-4 ${guide.type === 'Instructor-led' ? 'text-violet-600 bg-violet-100' : guide.type === 'Hands-on' ? 'text-green-700 bg-green-50' : 'text-gray-400 bg-gray-100'}`}>{guide.type}</span>
+                  <span class={`text-xs rounded px-2 py-0.5 shrink-0 ml-4 ${guide.type === 'Demo' ? 'text-violet-600 bg-violet-100' : guide.type === 'Hands-on' ? 'text-green-700 bg-green-50' : 'text-gray-400 bg-gray-100'}`}>{guide.type}</span>
                 </a>
               ))}
             </div>
@@ -298,16 +304,19 @@ const steps = [
 
     <!-- Congratulations / wrap-up -->
     <div class="border border-gray-200 rounded-2xl p-7">
-      <p class="text-xs font-semibold tracking-widest uppercase text-violet-500 mb-2">🎉 By the end of this lab</p>
+      <p class="text-xs font-semibold tracking-widest uppercase text-violet-500 mb-2">🎉 By the end of today's session</p>
       <h2 class="text-base font-semibold text-gray-900 mb-4">You'll have helped govern this Agentic AI use case by</h2>
       <ul class="text-sm text-gray-600 space-y-2 mb-5">
         <li class="flex gap-2"><span class="text-violet-400 font-bold mt-0.5">·</span> Validating risk levels</li>
         <li class="flex gap-2"><span class="text-violet-400 font-bold mt-0.5">·</span> Confirming regulatory and internal compliance</li>
         <li class="flex gap-2"><span class="text-violet-400 font-bold mt-0.5">·</span> Approving only well-governed use cases</li>
-        <li class="flex gap-2"><span class="text-violet-400 font-bold mt-0.5">·</span> Ensuring model fairness and quality through continuous validation</li>
       </ul>
       <p class="text-xs text-gray-500 leading-relaxed border-t border-gray-100 pt-4">
         🛡️ Governance is not a one-time check — it's a continuous loop of accountability and alignment.
+        <br />
+        Beyond today's session — see what you can do next: try
+        <a href={`${base}/steps/4-incident-management/mitigating-incidents`} class="text-violet-600 hover:underline font-medium">Step 4 — Incident Management</a>
+        on your own to close the loop and resolve a live production incident.
       </p>
     </div>
 

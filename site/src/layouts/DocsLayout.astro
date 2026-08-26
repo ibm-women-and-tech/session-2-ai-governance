@@ -64,6 +64,7 @@ const steps = [
     number: "04",
     label: "Incident Management",
     instructor: false,
+    beyondToday: true,
     items: [
       { label: "Incident Management", href: `${base}/steps/4-incident-management/mitigating-incidents` },
     ],
@@ -144,6 +145,7 @@ const activeStepIndex = steps.findIndex(g => g.items.some(i => i.href === curren
               </span>
               <p class="text-xs font-bold uppercase tracking-wider text-gray-400 leading-none">{group.label}</p>
               {group.instructor && <span class="text-[9px] font-semibold uppercase tracking-wide text-violet-400 leading-none">demo</span>}
+              {group.beyondToday && <span class="text-[9px] font-semibold uppercase tracking-wide text-gray-400 leading-none">beyond today</span>}
             </div>
             <ul class="space-y-0.5 pl-2">
               {group.items.map((item) => {
